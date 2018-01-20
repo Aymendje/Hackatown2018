@@ -13,6 +13,10 @@ const routes: Routes = [{
       component: DashboardComponent,
     },
     {
+      path: 'maps',
+      loadChildren: './maps/maps.module#MapsModule',
+    },
+    {
       path: '',
       redirectTo: 'dashboard',
       pathMatch: 'full',

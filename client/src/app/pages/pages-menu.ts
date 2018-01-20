@@ -13,7 +13,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
     children: [
       {
         title: 'Rechercher une garderie',
-        link: '/auth/login',
+        link: '/pages/maps/gmaps',
       },
       {
         title: 'Mes garderies',
