@@ -1,13 +1,50 @@
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-4">
         <nb-card>
             <nb-card-header>Filtrer les résultats de recherche</nb-card-header>
             <nb-card-body>
-                <span>Distance : {{this.distance}}<input type="range" min="0" max="20" class="slider" id="range" [value]="distance" (input)="distance = $event.target.value"></span>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>Distance</h4>
+                    </div>
+                    <div class="col-md-6 range-slider">
+                        <div class="range-slider">
+                            <input class="range-slider__range" type="range" (input)="distance = $event.target.value" [value]="distance" min="0" max="20">
+                            <span class="range-slider__value">{{this.distance}} km</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row daycare-row">
+                    <div class="col-md-6">
+                        <h4>Prix maximal</h4>
+                    </div>
+                    <div class="col-md-6 range-slider">
+                        <div class="range-slider">
+                            <input class="range-slider__range" type="range" (input)="prix = $event.target.value" [value]="prix" min="7" max="60">
+                            <span class="range-slider__value">{{this.prix}} $</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row daycare-row">
+                    <div class="col-md-6">
+                        <h4>Nombre d'enfants</h4>
+                    </div>
+                    <div class="col-md-6 range-slider">
+                        <div class="range-slider">
+                            <input class="range-slider__range" type="range" (input)="nombreEnfants = $event.target.value" [value]="nombreEnfants" min="1" max="10">
+                            <span class="range-slider__value">{{this.nombreEnfants}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row daycare-row">
+                    <div class="col-md-12">
+                        <button class="btn btn-success btn-round btn-demo"> Appliquer les filtres</button>
+                    </div>
+                </div>
             </nb-card-body>
         </nb-card>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-8">
         <ngx-gmaps></ngx-gmaps>
     </div>
 </div>

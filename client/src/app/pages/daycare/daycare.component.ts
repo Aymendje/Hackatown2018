@@ -20,4 +20,8 @@ export class DaycareComponent implements OnInit {
     this.prix = 8;
     this.isPublic = true;
   }
+
+  public query() {
+    // Calling the web service
+  }
 }
