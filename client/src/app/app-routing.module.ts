@@ -34,11 +34,7 @@ const routes: Routes = [
       {
         path: 'request-password',
         component: NbRequestPasswordComponent,
-      },
-      {
-        path: 'reset-password',
-        component: NbResetPasswordComponent,
-      },
+      }
     ],
   },
   { path: '', redirectTo: 'pages', pathMatch: 'full' },
