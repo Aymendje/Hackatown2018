@@ -1,21 +1,22 @@
-import { Component, OnInit } from "@angular/core";
-
-import { BasicService } from "./basic.service";
-import { Message } from "../../../common/communication/message";
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { AnalyticsService } from './@core/utils/analytics.service';
 
 @Component({
-    selector: "app-root",
-    templateUrl: "./app.component.html",
-    styleUrls: ["./app.component.css"]
+  selector: 'ngx-app',
+  template: '<router-outlet></router-outlet>',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent implements OnInit {
 
-    public constructor(private basicService: BasicService) { }
+  constructor(private analytics: AnalyticsService) {
+  }
 
-    public readonly title: string = "Hackatown";
-    public message: string;
-
-    public ngOnInit(): void {
-        this.basicService.basicGet().subscribe((message: Message) => this.message = message.title + message.body);
-    }
+  ngOnInit() {
+    this.analytics.trackPageViews();
+  }
 }
