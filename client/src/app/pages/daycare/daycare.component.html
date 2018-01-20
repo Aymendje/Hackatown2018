@@ -1,11 +1,11 @@
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-12">
         <nb-card>
             <nb-card-header>Filtrer les résultats de recherche</nb-card-header>
             <nb-card-body>
                 <div class="row">
                     <div class="col-md-6">
-                        <h4>Distance</h4>
+                        <h5>Distance</h5>
                     </div>
                     <div class="col-md-6 range-slider">
                         <div class="range-slider">
@@ -16,7 +16,7 @@
                 </div>
                 <div class="row daycare-row">
                     <div class="col-md-6">
-                        <h4>Prix maximal</h4>
+                        <h5>Prix maximal</h5>
                     </div>
                     <div class="col-md-6 range-slider">
                         <div class="range-slider">
@@ -27,7 +27,7 @@
                 </div>
                 <div class="row daycare-row">
                     <div class="col-md-6">
-                        <h4>Nombre d'enfants</h4>
+                        <h5>Nombre d'enfants</h5>
                     </div>
                     <div class="col-md-6 range-slider">
                         <div class="range-slider">
@@ -38,14 +38,32 @@
                 </div>
                 <div class="row daycare-row">
                     <div class="col-md-12">
-                        <button class="btn btn-success btn-round btn-demo"> Appliquer les filtres</button>
+                        <div class="button-group float-right" style="margin-right: 20px">
+                            <button class="btn btn-success btn-round btn-demo" (click)="query()"> Appliquer les filtres</button>
+                            <button class="btn btn-danger btn-round btn-demo" (click)="initialize()"> Réinitialiser</button>
+                        </div>
                     </div>
                 </div>
             </nb-card-body>
         </nb-card>
     </div>
-    <div class="col-md-8">
+</div>
+<div class="row">
+    <div class="col-md-12">
         <ngx-gmaps></ngx-gmaps>
     </div>
 </div>
-      
+<div class="row">
+    <div *ngFor="let daycare of daycares" class="col-md-3">
+        <nb-card>
+            <nb-card-header>
+                {{daycare.name}}
+                <div class="float-right">
+                    {{daycare.distance}} km
+                </div>
+            </nb-card-header>
+            <nb-card-body>{{daycare.description}}</nb-card-body>
+            <nb-card-footer>Places disponibles: {{daycare.available}}</nb-card-footer>
+        </nb-card>
+    </div>
+</div>
