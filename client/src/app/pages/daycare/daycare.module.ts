@@ -2,17 +2,18 @@ import { NgModule } from '@angular/core';
 import { AgmCoreModule } from '@agm/core';
 
 import { ThemeModule } from '../../@theme/theme.module';
-import { MapsRoutingModule, routedComponents } from './maps-routing.module';
+
+import { DaycareRoutingModule, routedComponents } from './daycare-routing.module';
 
 @NgModule({
   imports: [
     ThemeModule,
     AgmCoreModule.forRoot(),
-    MapsRoutingModule
+    DaycareRoutingModule
   ],
   exports: [],
   declarations: [
     ...routedComponents,
   ],
 })
-export class MapsModule { }
+export class DaycareModule { }

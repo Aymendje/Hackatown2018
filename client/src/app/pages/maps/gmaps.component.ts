@@ -5,7 +5,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./gmaps.component.scss'],
   template: `
     <nb-card>
-      <nb-card-header>Google Maps</nb-card-header>
       <nb-card-body>
         <agm-map [latitude]="lat" [longitude]="lng">
           <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
@@ -16,6 +15,6 @@ import { Component } from '@angular/core';
 })
 export class GmapsComponent {
 
-  lat = 51.678418;
-  lng = 7.809007;
+  lat = 45.6307;
+  lng = -72.9563;
 }

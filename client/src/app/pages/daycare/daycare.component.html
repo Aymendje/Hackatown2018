@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-md-6">
+        <nb-card>
+            <nb-card-header>Filtrer les résultats de recherche</nb-card-header>
+            <nb-card-body>
+                <span>Distance : {{this.distance}}<input type="range" min="0" max="20" class="slider" id="range" [value]="distance" (input)="distance = $event.target.value"></span>
+            </nb-card-body>
+        </nb-card>
+    </div>
+    <div class="col-md-6">
+        <ngx-gmaps></ngx-gmaps>
+    </div>
+</div>
+      

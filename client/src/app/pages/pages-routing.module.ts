@@ -13,8 +13,8 @@ const routes: Routes = [{
       component: DashboardComponent,
     },
     {
-      path: 'maps',
-      loadChildren: './maps/maps.module#MapsModule',
+      path: 'daycare',
+      loadChildren: './daycare/daycare.module#DaycareModule',
     },
     {
       path: '',

@@ -13,11 +13,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
     children: [
       {
         title: 'Rechercher une garderie',
-        link: '/pages/maps/gmaps',
+        link: '/pages/daycare',
       },
       {
         title: 'Mes garderies',
-        link: '/auth/register',
+        link: '/pages/daycare/my',
       }
     ],
   },
