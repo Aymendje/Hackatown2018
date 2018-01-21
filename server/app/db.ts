@@ -4,6 +4,7 @@ import { ISportEvent } from './../../common/models/sportEvent';
 import { IDayCareCamp } from './../../common/models/daycareCamp';
 import { IAlert } from './../../common/models/alert';
 import { IRegistration } from './../../common/models/eventRegister';
+import { IUser } from "../../common/IUser";
 
 
 export interface IDayCareModel extends IDayCare, mongoose.Document{}
@@ -80,7 +81,38 @@ let registrationSchema = new mongoose.Schema({
     eventType : String
 });
 
-
+export interface IServerUser extends IUser, mongoose.Document{}
+let serverUserSchema = new mongoose.Schema({
+    // id: Number,
+    gender: Boolean,
+    givenName: String,
+    surName: String,
+    streetAddress: String,
+    zipCode: String,
+    emailAddress: String,
+    userName: String,
+    // This user has the password in server side
+    password: String,
+    telephoneNumber: String,
+    birthday: String,
+    age: Number,
+    creditCardType: String,
+    creditCardNumber: Number,
+    CVV2: Number,
+    creditCardExpirationDate: String,
+    SSN: Number,
+    occupation: String,
+    company: String,
+    vehicle: String,
+    bloodType: String,
+    mass: Number,
+    height: Number,
+    location:{
+        lat: Number,
+        lng : Number
+    },
+})
+export let user = mongoose.model<IServerUser>("Peoples", serverUserSchema);
 export let dayCare = mongoose.model<IDayCareModel>("DayCare",dayCareSchema);
 export let sportEvent = mongoose.model<ISportEventModel>("SportEvent",sportEventSchema);
 export let dayCareCamp = mongoose.model<IDayCareCampModel>("DayCareCamp",dayCareCampSchema);

@@ -1,18 +1,9 @@
 import { Request, Response, NextFunction } from "express";
 import "reflect-metadata";
 import { injectable, } from "inversify";
-import { dayCare,sportEvent,dayCareCamp,IDayCareCampModel,alert, registration } from "../db";
+import { dayCare,sportEvent,dayCareCamp,IDayCareCampModel,alert, registration, user} from "../db";
 
-import { IUserAuthInfo } from "../IUserAuthInfo";
-import { User } from "../User";
 module Route {
-    const AcceptedUsers: IUserAuthInfo[] = [
-        {
-            email: 'polyball@bidon.com',
-            password: 'qwerty123',
-            otherInformation: 'Je suis un chevreuil'
-        }
-    ]
 
     @injectable()
     export class Api {
@@ -22,26 +13,25 @@ module Route {
         }
 
         public authLogin(req: Request, res: Response, next: NextFunction): void {
-            console.log(req.body)
+            // console.log(req.body)
             let email = req.body.email;
             let pwd = req.body.password;
-            let userFound = AcceptedUsers.find((element) => {
-                return element.email === email && element.password === pwd;
-            })
-            console.log(userFound)
-            if (userFound){
-                let theUser = new User();
-                theUser.Gender = true;
-                theUser.Age = 42;
-                theUser.UserName = 'Yonni'
+            user.findOne({
+                emailAddress: email,
+                password: pwd
+            }).then((user) => {
+                // console.log(user)
+                if (!user){
+                    throw new Error('Not found')
+                }
                 res.json({
                     'data': {
-                        'token': JSON.stringify(theUser)
+                        'token': JSON.stringify(user)
                     }
                 })
-            } else {
-                res.sendStatus(403);
-            }
+            }).catch((reason) => {
+                res.sendStatus(403)
+            });
         }
 
         public getDayCare(req:Request, res :Response, next:NextFunction): void{
