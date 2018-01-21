@@ -4,11 +4,13 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import { IDayCare } from '../../../../../common/models/daycare';
 import { DayCareViewModel } from './daycare.viewmodel';
+import { Definitions } from '../../../../../common/definitions';
 
 @Injectable()
 export class DayCareService {
 
-    private baseUrl = "http:/town.polypleb.com:3000/api/daycare";
+
+    private baseUrl = Definitions.ServerHostName + '/api/daycare';
 
     constructor(private http: Http) {
 
@@ -25,7 +27,8 @@ export class DayCareService {
             eventId : eventId,
             eventType: 'daycare'
         }
-        return this.http.post('http:/town.polypleb.com:3000/api/registration', body)
+
+        return this.http.post(Definitions.ServerHostName+'/api/registration', body)
             .toPromise()
             .then((res) => {
                 return res.json()

@@ -5,6 +5,7 @@ import { NbAuthModule, NbEmailPassAuthProvider } from '@nebular/auth';
 import { throwIfAlreadyLoaded } from './module-import-guard';
 import { DataModule } from './data/data.module';
 import { AnalyticsService } from './utils/analytics.service';
+import { Definitions } from '../../../../common/definitions'
 // TODO: Configure the NbEmailPassAuthProvider paths here..
 
 const NB_CORE_PROVIDERS = [
@@ -21,7 +22,8 @@ const NB_CORE_PROVIDERS = [
               success: '/pages/'
             }
           },
-          baseEndpoint: 'http:/town.polypleb.com:3000',
+
+          baseEndpoint: Definitions.ServerHostName,
         },
       },
     },

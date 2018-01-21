@@ -4,11 +4,16 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import { IAlert } from '../../../../../common/models/alert';
 import { AlertViewModel } from './alert.viewmodel';
+import { Definitions } from '../../../../../common/definitions';
 
 @Injectable()
 export class AlertService {
 
+<<<<<<< HEAD
     private baseUrl = "http:/town.polypleb.com:3000/api/alerts";
+=======
+    private baseUrl = Definitions.ServerHostName + "/api/alerts";
+>>>>>>> origin/master
 
     constructor(private http: Http) {
 

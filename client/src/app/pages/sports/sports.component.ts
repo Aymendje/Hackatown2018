@@ -128,7 +128,7 @@ export class SportsComponent implements OnInit {
             this.sportEvents = [];
             v.forEach((element) => {
                 let x = {
-                    id: element._id,
+                    id: element.oid,
                     name: element.name,
                     days: element.days,
                     lat: element.location.lat,

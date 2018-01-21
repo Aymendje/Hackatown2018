@@ -4,11 +4,16 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import { ISportEvent } from '../../../../../common/models/sportEvent';
 import { SportViewModel } from './sports.viewmodel';
+import { Definitions } from '../../../../../common/definitions';
 
 @Injectable()
 export class SportsService {
 
+<<<<<<< HEAD
     private baseUrl = "http:/town.polypleb.com:30000/api/sportEvent";
+=======
+    private baseUrl = Definitions.ServerHostName+'/api/sportEvent';
+>>>>>>> origin/master
 
     constructor(private http: Http) {
 
@@ -52,7 +57,8 @@ export class SportsService {
                 body: body
             }
         );
-        this.http.post(`http:/town.polypleb.com:3000/api/registration`, body).toPromise().then((res)=>{
+
+        this.http.post(Definitions.ServerHostName+ '/api/registration', body).toPromise().then((res)=>{
             return res.json();
         });
     }

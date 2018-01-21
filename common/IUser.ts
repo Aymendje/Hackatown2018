@@ -25,5 +25,6 @@ export interface IUser{
     bloodType: string;
     mass : number;
     height: number;
-    location: ILocation
+    location: ILocation;
+    children: number[];
 }

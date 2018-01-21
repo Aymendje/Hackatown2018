@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import "reflect-metadata";
 import { injectable, } from "inversify";
-import { dayCare,sportEvent,dayCareCamp,IDayCareCampModel,alert, registration, user} from "../db";
+import { dayCare,sportEvent,dayCareCamp,IDayCareCampModel,alert, registration, user, child} from "../db";
 
 module Route {
 
@@ -252,6 +252,24 @@ module Route {
             }).catch((reason)=>{
                 console.log(reason);
                 res.send(500);
+            })
+        }
+
+        public getChildrenOfUser(req: Request, res: Response, next: NextFunction): void{
+            let email = req.query.email;
+            user.findOne({
+                emailAddress: email
+            }).then((result) => {
+                if (!result){
+                    res.send(403)
+                    return;
+                }
+                child.where('id').in(result.children).then((vals) => {
+                    console.log(vals)
+                    res.json(vals)
+                })
+            }).catch((err) => {
+                res.send(403);
             })
         }
 
