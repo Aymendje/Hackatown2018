@@ -38,6 +38,9 @@ export class SportsComponent implements OnInit {
     public karateChecked: boolean;
 
     private markers: Array<any>;
+
+    private default: string = "Emilio Rivera";
+    private kids = [ "Emilio Rivera", "Nikolay Radoev", "Aymen Djellal"];
     
     constructor(private sportsService: SportsService, private cd: ChangeDetectorRef) {
         
@@ -103,6 +106,20 @@ export class SportsComponent implements OnInit {
         return types;
     }
 
+    public select(sport: SportViewModel) {
+        this.markers = [];
+        this.markers.push({
+            title: sport.name,
+            lat: sport.lat,
+            long: sport.long
+        });
+        this.cd.markForCheck();
+    }
+
+    public registerKid(sportEvent: SportViewModel) {
+        this.sportsService.registerKid(sportEvent);
+    }
+
     public query() {
         let daysChecked = this.getDays();
         let typesChecked = this.getTypes();     
@@ -111,12 +128,18 @@ export class SportsComponent implements OnInit {
             this.sportEvents = [];
             v.forEach((element) => {
                 let x = {
+                    id: element._id,
                     name: element.name,
                     days: element.days,
                     lat: element.location.lat,
                     long: element.location.lng,
                     distance: this.calculateDistance(this.location.lat, this.location.long, element.location.lat, element.location.lng).toFixed(1),
-                    types: element.sport
+                    types: element.sport,
+                    price: element.price,
+                    available: element.available,
+                    address: element.address,
+                    tel : element.tel,
+                    kid: this.default
                 }
                 this.sportEvents.push(x as SportViewModel);
                 this.markers.push( {
@@ -138,6 +161,7 @@ export class SportsComponent implements OnInit {
             this.cd.markForCheck();
         });
     }
+
     private calculateDistance(lat1:number, long1:number, lat2:number, long2:number) : number {
         let p = 0.017453292519943295;    // Math.PI / 180
         let c = Math.cos;

@@ -108,27 +108,27 @@
 <div class="row">
     <div *ngFor="let sportEvent of sportEvents" class="col-md-3">
         <nb-card>
-            <nb-card-header (click)="select(daycare)">
+            <nb-card-header (click)="select(sportEvent)">
                 <span class="title">{{sportEvent.name}}</span>
                 <span class="float-right">
                     {{sportEvent.distance}} km
                 </span>
             </nb-card-header>
             <nb-card-body>
-                <p>Prix : 4 $</p>
-                <p>Places disponibles: 5</p>
+                <p>Prix : {{sportEvent.price}} $</p>
+                <p>Places disponibles: {{sportEvent.available}}</p>
+                <p>Adresse: {{sportEvent.address}}</p>
+                <p>Téléphone: {{sportEvent.tel}}</p>
             </nb-card-body>
             <nb-card-footer>
                 <div class="row">
                     <div class="col-md-7 form-group">
-                        <select class="form-control">
-                            <option>Emilio Rivera</option>
-                            <option>Nikolay Radoev</option>
-                            <option>Aymen Djellal</option>
+                        <select class="form-control" [(ngModel)]="sportEvent.kid">
+                            <option *ngFor="let kid of kids" [ngValue]="kid">{{kid}}</option>
                         </select>
                     </div>
                     <div class="col-md-5">
-                        <button class="btn btn-success btn-round" (click)="query()"> Inscrire</button>
+                        <button class="btn btn-success btn-round" (click)="registerKid(sportEvent)"> Inscrire</button>
                     </div>
                 </div>
             </nb-card-footer>
