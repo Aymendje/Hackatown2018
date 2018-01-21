@@ -25,6 +25,8 @@ export class DaycareComponent implements OnInit {
     }
 
     private markers: Array<any>;
+    private kids = ['Emilio Rivera', 'Nikolay Radoev', 'Aymen Djellal']
+    private selectedKid = this.kids[0];
 
     constructor(private daycareService: DayCareService, private cd: ChangeDetectorRef) {
         
@@ -50,6 +52,15 @@ export class DaycareComponent implements OnInit {
         });
         this.cd.markForCheck();
     }
+    
+    public registerKid(daycare: DayCareViewModel){
+        console.log(daycare)
+        console.log(daycare.kid)
+
+        this.daycareService.subscribeChildToEvent(daycare.kid, daycare.id).then((value) => {
+            console.log('Successfully registered your kid !')
+        })
+    }
 
     public query() {
         this.daycareService.getDayCares(this.distance, this.prix, this.nombreEnfants, this.location.lat, this.location.long).then((result) => {
@@ -57,6 +68,7 @@ export class DaycareComponent implements OnInit {
             this.markers = [];
             for (let daycare of result) {
                 let x = {
+                    id: daycare._id,
                     name: daycare.name,
                     price: daycare.price,
                     available: daycare.available,
@@ -65,7 +77,8 @@ export class DaycareComponent implements OnInit {
                     location: {
                         lat: daycare.location.lat,
                         long: daycare.location.lng
-                    }
+                    },
+                    kid: 'Emilio Rivera'
                 }
                 this.daycares.push(x as DayCareViewModel);
                 this.markers.push( {
@@ -83,6 +96,7 @@ export class DaycareComponent implements OnInit {
                 }
             })
             this.cd.markForCheck();
+            console.log(this.daycares)
         });
     }
     

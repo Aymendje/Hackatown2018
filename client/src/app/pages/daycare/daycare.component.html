@@ -59,7 +59,7 @@
     </div>
 </div>
 <div class="row">
-    <div *ngFor="let daycare of daycares" class="col-md-3">
+    <div *ngFor="let daycare of daycares" class="col-md-4">
         <nb-card>
             <nb-card-header (click)="select(daycare)">
                 <span class="title">{{daycare.name}}</span>
@@ -74,14 +74,12 @@
             <nb-card-footer>
                 <div class="row">
                     <div class="col-md-7 form-group">
-                        <select class="form-control">
-                            <option>Emilio Rivera</option>
-                            <option>Nikolay Radoev</option>
-                            <option>Aymen Djellal</option>
+                        <select class="form-control" [(ngModel)]="daycare.kid">
+                            <option *ngFor="let kid of kids" [ngValue]="kid">{{kid}}</option>
                         </select>
                     </div>
                     <div class="col-md-5">
-                        <button class="btn btn-success btn-round" (click)="query()"> Inscrire</button>
+                        <button class="btn btn-success btn-round" (click)="registerKid(daycare)"> Inscrire</button>
                     </div>
                 </div>
             </nb-card-footer>

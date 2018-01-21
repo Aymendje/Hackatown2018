@@ -14,6 +14,21 @@ export class DayCareService {
 
     }
 
+
+    public subscribeChildToEvent(childId: string, eventId: string): Promise<any>{
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let body = {
+            kidId : childId,
+            eventId : eventId,
+            eventType: 'daycare'
+        }
+        return this.http.post('http://localhost:3000/api/registration', body)
+            .toPromise()
+            .then((res) => {
+                return res.json()
+            })
+    }
+
     public getDayCares(distance: number, price: number, childrenCount: number, lat: number, long: number): Promise<IDayCare[]> {
 
         let headers = new Headers({ 'Content-Type': 'application/json' });
