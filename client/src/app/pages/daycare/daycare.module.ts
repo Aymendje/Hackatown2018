@@ -4,6 +4,7 @@ import { AgmCoreModule } from '@agm/core';
 import { ThemeModule } from '../../@theme/theme.module';
 
 import { DaycareRoutingModule, routedComponents } from './daycare-routing.module';
+import { DayCareService } from './daycare.service';
 
 @NgModule({
   imports: [
@@ -15,5 +16,8 @@ import { DaycareRoutingModule, routedComponents } from './daycare-routing.module
   declarations: [
     ...routedComponents,
   ],
+  providers: [
+    DayCareService
+  ]
 })
 export class DaycareModule { }
