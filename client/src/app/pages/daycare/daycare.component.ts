@@ -17,7 +17,8 @@ export class DaycareComponent implements OnInit {
     public nombreEnfants: number;
     public prix: number;
     public daycares: DayCareViewModel[];
-    
+    public text = "";
+
     private location = {
         lat: 45.630692,
         long: -72.956329
@@ -37,6 +38,7 @@ export class DaycareComponent implements OnInit {
         this.distance = 5;
         this.nombreEnfants = 1;
         this.prix = 8;
+        this.text = "";
     }
     
     public select(daycare: DayCareViewModel) {
