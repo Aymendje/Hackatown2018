@@ -1,9 +1,13 @@
 import { Request, Response, NextFunction } from "express";
 import "reflect-metadata";
 import { injectable, } from "inversify";
+<<<<<<< HEAD
 import { dayCare,sportEvent } from "../db";
 import { IUserAuthInfo } from "../IUserAuthInfo";
 import { User } from "../User";
+=======
+import { dayCare,sportEvent,dayCareCamp,IDayCareCampModel } from "../db";
+>>>>>>> 294d24c6d4cd1c72ef9d58196bcbe87e200b1a91
 module Route {
     const AcceptedUsers: IUserAuthInfo[] = [
         {
@@ -54,10 +58,10 @@ module Route {
             dayCare.find(
                 {
                     price :{
-                        $lt : price
+                        $lte : price
                     },
                     available :{
-                        $gt : children
+                        $gte : children
                     }
                 }).
                 then(
@@ -88,7 +92,7 @@ module Route {
             sportEvent.find({
                 // Find events based on age
                 minAge: {
-                    $lt: age
+                    $lte: age
                 },
             }).then(
                 (sportEvents:any[])=>{
@@ -109,7 +113,43 @@ module Route {
         }
 
         public getDayCareCamp(req:Request,res:Response, next:NextFunction) : void{
-            
+            // Test data
+        //    let testminAge = 5;
+        //    let testmaxAge = 10;
+        //    let types = ["Science", "Art"];
+        //    let startDate = new Date(2018,4,5);
+        //    let endDate = new Date(2018,8,18);
+
+        let testminAge = req.params.minAge;
+        let testmaxAge = req.params.maxAge;
+        let types = req.params.tags;
+        let startDate = req.params.startDate;
+        let endDate =req.params.endDate;
+
+            dayCareCamp.find({
+                minAge:{
+                    $lte: testminAge
+                },
+                maxAge :{
+                    $gte:testmaxAge
+                }
+            }).then(
+                (dayCareCamps:IDayCareCampModel[])=>{
+                    let filteredData = dayCareCamps.filter((v,i,a)=>
+                    {
+                        let validStartDate = v.startDate < startDate;
+                        let validEndDate = v.endDate > endDate;
+                        return this.intersect(types,v.tags).length > 0
+                        &&
+                        validStartDate
+                        &&
+                        validEndDate;
+                    });
+                res.json(filteredData);     
+            }).catch((reason)=>{
+                console.log(reason);
+                res.send(500);
+            })
         }
 
         public getAlerts(req:Request, res:Response, next:NextFunction): void{

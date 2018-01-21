@@ -15,6 +15,8 @@ export class Routes {
 
         router.get('/api/daycare', (req: Request, res: Response, next: NextFunction) => this.auth.getDayCare(req,res,next))
         router.get('/api/sportEvent',(req:Request,res:Response,next:NextFunction)=> this.auth.getSpotEvents(req,res,next))
+        router.get('/api/dayCareCamps',(req:Request,res:Response,next:NextFunction)=> this.auth.getDayCareCamp(req,res,next))
+        
         
         return router;
     }
