@@ -165,20 +165,21 @@ module Route {
 
         public getAlerts(req:Request, res:Response, next:NextFunction): void{
           
-            let dist = 20;
-            let lat = 45.5801883;
-            let long = -73.1624795;
-            let types = ["Fire","Yonni"];
+            // let dist = 20;
+            // let lat = 45.5801883;
+            // let long = -73.1624795;
+            // let types = ["Fire","Yonni"];
 
-            // let dist = req.params.distance;
-            // let lat = req.params.lat;
-            // let long = req.params.long;
-            // let types = req.params.types;
+            let dist = req.query['distance'];
+            if( dist <= 20)
+                dist = 50
+            let lat = req.query['lat'];
+            let long = req.query['long'];
+
             alert.find({ }).then((alerts:any[])=>{
                 let filteredData = alerts.filter((v,i,a)=>{
                     let calculatedDistance = this.calculateDistance(v.location.lat,v.location.lng, lat, long);
-                    let hasTypeIntersect = this.intersect(types,v.tags).length > 0;
-                    return calculatedDistance < dist && hasTypeIntersect;
+                    return calculatedDistance < dist;
                 });
                 res.json(filteredData);     
             });
@@ -187,17 +188,23 @@ module Route {
 
         public createAlert(req:Request, res:Response, next:NextFunction) : void{
             
-            // let name = "Fire Alert";
+            let name = "Alert";
             // let lat = 45.5801883 + Math.random()/3;
             // let long =  -73.1624795  + Math.random()/3;
-            // let types = ["Fire"];
-            // let description = "SHITS ON FIRE YO!";
-
-            let name = req.body.name;
-            let types = req.body.types;
-            let description = req.body.description;
             let lat = req.body.lat;
             let long = req.body.long;
+
+            console.log(req.body['lat']);
+            console.log("lat :" + lat);
+            console.log("long: "+ long);
+            let types = ["Fire"];
+            let description = "SHITS ON FIRE YO!";
+
+            // let name = req.body.name;
+            // let types = req.body.types;
+            // let description = req.body.description;
+            // let lat = req.body.lat;
+            // let long = req.body.long;
 
 
             let newAlert = new alert();

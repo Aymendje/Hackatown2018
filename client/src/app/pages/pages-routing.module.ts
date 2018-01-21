@@ -21,6 +21,10 @@ const routes: Routes = [{
             loadChildren: './sports/sports.module#SportsModule',
         },
         {
+            path: 'alerts',
+            loadChildren: './alerts/alert.module#AlertModule',
+        },
+        {
             path: '',
             redirectTo: 'home',
             pathMatch: 'full',
