@@ -1,0 +1,1286 @@
+[
+    {
+        "address": "1015 Rue Dessaulles, Saint-Hyacinthe, QC J2S 2Y8, Canada",
+        "location": {
+            "lat": 45.62795450000001,
+            "lng": -72.94502969999999
+        },
+        "name": "Centre De Benevolat-St-Hyaci",
+        "rating": 4.1,
+        "tel": "+1 450-773-4966",
+        "price": 1944.0,
+        "private": false,
+        "available": 1,
+        "sport": "badminton",
+        "days": [
+            "lundi",
+            "mardi",
+            "mercredi",
+            "jeudi",
+            "vendredi"
+        ]
+    },
+    {
+        "address": "2875 Avenue Bourdages N, Saint-Hyacinthe, QC J2S 5S3, Canada",
+        "location": {
+            "lat": 45.6329342,
+            "lng": -72.9631771
+        },
+        "name": "\u00c9cole Secondaire Saint-Joseph De Saint-Hyacinthe",
+        "rating": 4.3,
+        "tel": "+1 450-774-3775",
+        "price": 250.0,
+        "private": false,
+        "available": 21,
+        "sport": "badminton",
+        "days": []
+    },
+    {
+        "address": "393 Boulevard Sir-Wilfrid-Laurier, Beloeil, QC J3G 4H6, Canada",
+        "location": {
+            "lat": 45.55712200000001,
+            "lng": -73.20998999999999
+        },
+        "name": "Journal L'Oeil R\u00e9gional",
+        "rating": 5,
+        "tel": "+1 450-467-1821",
+        "price": 219.0,
+        "private": false,
+        "available": 21,
+        "sport": "badminton",
+        "days": [
+            "vendredi",
+            "findesemaine"
+        ]
+    },
+    {
+        "address": "444 Rue Mountainview, Otterburn Park, QC J3H 2K2, Canada",
+        "location": {
+            "lat": 45.5455581,
+            "lng": -73.1966243
+        },
+        "name": "Mountainview School",
+        "rating": 4.5,
+        "tel": "+1 450-550-2517",
+        "photos": "https://lh3.googleusercontent.com/p/AF1QipN3cY-NTSaLLJjewJX3cSNZa_m7oOVoX8f2Gx1a=s1600-w400",
+        "price": 311.0,
+        "private": true,
+        "available": 16,
+        "sport": "badminton",
+        "days": [
+            "mercredi",
+            "jeudi",
+            "vendredi"
+        ]
+    },
+    {
+        "address": "800 Chemin Rouillard, Mont-Saint-Hilaire, QC J3G 4S6, Canada",
+        "location": {
+            "lat": 45.56875609999999,
+            "lng": -73.1576001
+        },
+        "name": "Coll\u00e8ge Saint-Hilaire",
+        "rating": 4.2,
+        "tel": "+1 450-467-7001",
+        "price": 1150.0,
+        "private": false,
+        "available": 10,
+        "sport": "badminton",
+        "days": []
+    },
+    {
+        "address": "600 Boulevard Sir-Wilfrid-Laurier, Beloeil, QC J3G 4J2, Canada",
+        "location": {
+            "lat": 45.5636072,
+            "lng": -73.2095881
+        },
+        "name": "Sports Experts",
+        "rating": 2.9,
+        "tel": "+1 450-467-7201",
+        "price": 526.0,
+        "private": false,
+        "available": 12,
+        "sport": "badminton",
+        "days": [
+            "jeudi"
+        ]
+    },
+    {
+        "address": "1055 Rue Louis-Marchand, Beloeil, QC J3G 6S4, Canada",
+        "location": {
+            "lat": 45.5971364,
+            "lng": -73.21562159999999
+        },
+        "name": "Prefair",
+        "rating": 4.4,
+        "tel": "+1 450-446-7060",
+        "photos": "https://lh3.googleusercontent.com/p/AF1QipNPOK5oODnGC1fOFlw1fyHLevNEzbyFfTytZ2Mx=s1600-w400",
+        "price": 887.0,
+        "private": false,
+        "available": 3,
+        "sport": "badminton",
+        "days": [
+            "lundi",
+            "mardi",
+            "mercredi",
+            "jeudi"
+        ]
+    },
+    {
+        "address": "655 Avenue Sainte-Anne, Saint-Hyacinthe, QC J2S 5G4, Canada",
+        "location": {
+            "lat": 45.62438660000001,
+            "lng": -72.9471915
+        },
+        "name": "Le Courrier de Saint-Hyacinthe",
+        "rating": 4.7,
+        "tel": "+1 450-773-6028",
+        "photos": "https://lh3.googleusercontent.com/p/AF1QipP1EDMg-x9iHnfUPXHHVRHPBwdJ-Iay2t9hmRg8=s1600-w400",
+        "price": 1470.0,
+        "private": true,
+        "available": 7,
+        "sport": "badminton",
+        "days": []
+    },
+    {
+        "address": "2497 Avenue Sainte-Anne, Saint-Hyacinthe, QC J2S 5J1, Canada",
+        "location": {
+            "lat": 45.6313847,
+            "lng": -72.9569758
+        },
+        "name": "Troph\u00e9es St-Hyacinthe enr.",
+        "rating": 5,
+        "tel": "+1 450-771-1220",
+        "photos": "https://lh3.googleusercontent.com/p/AF1QipMtQHxil2ZpCTM5mpjmCJkPA1-YlDKZgfl7LeEu=s1600-w400",
+        "price": 1569.0,
+        "private": false,
+        "available": 13,
+        "sport": "badminton",
+        "days": [
+            "vendredi",
+            "findesemaine",
+            "lundi",
+            "mardi"
+        ]
+    },
+    {
+        "address": "3041 Rue Principale, Saint-Jean-Baptiste, QC J0L 2B0, Canada",
+        "location": {
+            "lat": 45.5201477,
+            "lng": -73.12453270000002
+        },
+        "name": "H\u00f4tel De Ville Saint Jean Baptiste",
+        "rating": 3.2,
+        "tel": "+1 450-467-3456",
+        "price": 520.0,
+        "private": true,
+        "available": 16,
+        "sport": "badminton",
+        "days": [
+            "vendredi",
+            "findesemaine"
+        ]
+    },
+    {
+        "address": "3000 Avenue Boull\u00e9, Saint-Hyacinthe, QC J2S 1H9, Canada",
+        "location": {
+            "lat": 45.6175856,
+            "lng": -72.97502159999999
+        },
+        "name": "C\u00e9gep de Saint-Hyacinthe",
+        "rating": 3.9,
+        "tel": "+1 450-773-6800",
+        "photos": "https://lh3.googleusercontent.com/p/AF1QipOEiLOb5-Tn2Wkd6TFqDyYyhBihyr_wnGINdpgl=s1600-w400",
+        "price": 1587.0,
+        "private": false,
+        "available": 15,
+        "sport": "badminton",
+        "days": [
+            "mercredi"
+        ]
+    },
+    {
+        "address": "3200 Boulevard Laframboise #1690, Saint-Hyacinthe, QC J2S 4Z5, Canada",
+        "location": {
+            "lat": 45.6387895,
+            "lng": -72.9635651
+        },
+        "name": "Sports Experts",
+        "rating": 4,
+        "tel": "+1 450-774-3135",
+        "photos": "https://lh3.googleusercontent.com/p/AF1QipMh5JRXQxoXR1U8-O2qMM-M-cmyPGLW8zoG4csU=s1600-w400",
+        "price": 663.0,
+        "private": true,
+        "available": 5,
+        "sport": "badminton",
+        "days": [
+            "mercredi",
+            "jeudi"
+        ]
+    },
+    {
+        "address": "3360 Boulevard Laframboise, Saint-Hyacinthe, QC J2S 4Z4, Canada",
+        "location": {
+            "lat": 45.637664,
+            "lng": -72.968037
+        },
+        "name": "Broli La Source Du Sport",
+        "rating": 4.7,
+        "tel": "+1 450-774-1104",
+        "photos": "https://lh3.googleusercontent.com/p/AF1QipOTGR9fd3WJ11v-LpUb4daAPVGQFjd8fVK8FOig=s1600-w400",
+        "price": 1517.0,
+        "private": true,
+        "available": 24,
+        "sport": "badminton",
+        "days": [
+            "lundi",
+            "mardi"
+        ]
+    },
+    {
+        "address": "256 Rue Phaneuf, Saint-Pie, QC J0H 1W0, Canada",
+        "location": {
+            "lat": 45.505705,
+            "lng": -72.904513
+        },
+        "name": "V\u00e9lo Mario Pontbriand Inc",
+        "rating": 5,
+        "tel": "+1 450-772-2374",
+        "photos": "https://lh3.googleusercontent.com/p/AF1QipOYlVgop-GkUft_r3x95D-9W1iJxWW5q32JLCSE=s1600-w400",
+        "price": 826.0,
+        "private": true,
+        "available": 2,
+        "sport": "hockey",
+        "days": []
+    },
+    {
+        "address": "21 Rue Laflamme, Saint-Liboire, QC J0H 1R0, Canada",
+        "location": {
+            "lat": 45.6501293,
+            "lng": -72.7607848
+        },
+        "name": "Oz Sports inc",
+        "rating": 5,
+        "tel": "+1 450-793-4225",
+        "price": 531.0,
+        "private": true,
+        "available": 8,
+        "sport": "hockey",
+        "days": [
+            "jeudi",
+            "vendredi",
+            "findesemaine"
+        ]
+    },
+    {
+        "address": "2680 Avenue Beauparlant, Saint-Hyacinthe, QC J2S 4M8, Canada",
+        "location": {
+            "lat": 45.6348432,
+            "lng": -72.9571474
+        },
+        "name": "Association Hockey Mineur Inc",
+        "rating": 4,
+        "tel": "+1 450-250-8641",
+        "price": 979.0,
+        "private": true,
+        "available": 11,
+        "sport": "hockey",
+        "days": [
+            "findesemaine",
+            "lundi",
+            "mardi"
+        ]
+    },
+    {
+        "address": "15855 Avenue Hubert, Saint-Hyacinthe, QC J2T 4C9, Canada",
+        "location": {
+            "lat": 45.6144557,
+            "lng": -72.9561696
+        },
+        "name": "3B Hockey",
+        "tel": "+1 450-773-5258",
+        "photos": "https://lh3.googleusercontent.com/p/AF1QipNh8YCp4GvuPHei6AHdHc40neAkUNbuaWHJG4Rl=s1600-w400",
+        "price": 1257.0,
+        "private": false,
+        "available": 15,
+        "sport": "hockey",
+        "days": [
+            "mercredi"
+        ]
+    },
+    {
+        "address": "C.P. 83031, mail Montenach, Beloeil, QC J3G 6L7, Canada",
+        "location": {
+            "lat": 45.56049000000001,
+            "lng": -73.20833499999999
+        },
+        "name": "\u00c9cole de hockey Gold in the Net Qu\u00e9bec",
+        "tel": "+1 877-736-4653",
+        "price": 974.0,
+        "private": false,
+        "available": 14,
+        "sport": "hockey",
+        "days": [
+            "jeudi",
+            "vendredi",
+            "findesemaine",
+            "lundi"
+        ]
+    },
+    {
+        "address": "550 Rue Jolliet, Mont-Saint-Hilaire, QC J3H 4X2, Canada",
+        "location": {
+            "lat": 45.56835409999999,
+            "lng": -73.1828288
+        },
+        "name": "Ahm Hockey",
+        "tel": "+1 450-536-1090",
+        "price": 1330.0,
+        "private": true,
+        "available": 0,
+        "sport": "hockey",
+        "days": [
+            "mardi",
+            "mercredi",
+            "jeudi",
+            "vendredi",
+            "findesemaine"
+        ]
+    },
+    {
+        "address": "886 Rue Principale, La Pr\u00e9sentation, QC J0H 1B0, Canada",
+        "location": {
+            "lat": 45.6675315,
+            "lng": -73.0544431
+        },
+        "name": "dekhockey st-hyacinthe",
+        "rating": 4.5,
+        "tel": "+1 450-501-4090",
+        "photos": "https://lh3.googleusercontent.com/p/AF1QipOqtzpuAb_JW6Oars0XlbS2-1HHY_YnDNfxRu3-=s1600-w400",
+        "price": 1239.0,
+        "private": false,
+        "available": 2,
+        "sport": "hockey",
+        "days": [
+            "vendredi",
+            "findesemaine"
+        ]
+    },
+    {
+        "address": "900 Rue Turcot, Saint-Hyacinthe, QC J2S 1M2, Canada",
+        "location": {
+            "lat": 45.6348776,
+            "lng": -72.9556612
+        },
+        "name": "Stade Louis-Philippe-Gaucher",
+        "rating": 3.6,
+        "tel": "+1 450-778-8338",
+        "photos": "https://lh3.googleusercontent.com/p/AF1QipMeKbKMAu9-aZTz6I2ofBpTBSqGuL6JXETxTR84=s1600-w400",
+        "price": 626.0,
+        "private": true,
+        "available": 24,
+        "sport": "hockey",
+        "days": [
+            "findesemaine",
+            "lundi",
+            "mardi",
+            "mercredi",
+            "jeudi"
+        ]
+    },
+    {
+        "address": "600 Boulevard Sir-Wilfrid-Laurier, Beloeil, QC J3G 4J2, Canada",
+        "location": {
+            "lat": 45.5636072,
+            "lng": -73.2095881
+        },
+        "name": "Sports Experts",
+        "rating": 2.9,
+        "tel": "+1 450-467-7201",
+        "price": 1631.0,
+        "private": true,
+        "available": 11,
+        "sport": "hockey",
+        "days": [
+            "jeudi",
+            "vendredi",
+            "findesemaine",
+            "lundi",
+            "mardi"
+        ]
+    },
+    {
+        "address": "600 Rue Turcot, Saint-Hyacinthe, QC J2S 1M5, Canada",
+        "location": {
+            "lat": 45.6373807,
+            "lng": -72.9566483
+        },
+        "name": "Isatis Sport St-Hyacinthe",
+        "rating": 4.2,
+        "tel": "+1 450-773-1010",
+        "photos": "https://lh3.googleusercontent.com/p/AF1QipNQFznXsyHH6AXTFm3Kui-1rlEYJYig4vtT95cG=s1600-w400",
+        "price": 786.0,
+        "private": false,
+        "available": 20,
+        "sport": "hockey",
+        "days": [
+            "mercredi",
+            "jeudi",
+            "vendredi"
+        ]
+    },
+    {
+        "address": "249 Boulevard Sir-Wilfrid-Laurier, Beloeil, QC J3G 4H1, Canada",
+        "location": {
+            "lat": 45.553864,
+            "lng": -73.21312999999999
+        },
+        "name": "Sports Concept",
+        "rating": 3.2,
+        "tel": "+1 450-446-2262",
+        "photos": "https://lh3.googleusercontent.com/p/AF1QipMDmz01g5JmxdGd_5u8aTAf3_msGvFrejGuJNyR=s1600-w400",
+        "price": 617.0,
+        "private": false,
+        "available": 7,
+        "sport": "hockey",
+        "days": [
+            "jeudi",
+            "vendredi",
+            "findesemaine",
+            "lundi",
+            "mardi"
+        ]
+    },
+    {
+        "address": "3050 Boulevard Choquette, Saint-Hyacinthe, QC J2S 1H1, Canada",
+        "location": {
+            "lat": 45.6329358,
+            "lng": -72.97179899999999
+        },
+        "name": "Sports Aux Puces",
+        "rating": 3.8,
+        "tel": "+1 450-771-7119",
+        "photos": "https://lh3.googleusercontent.com/p/AF1QipNrPUmPHEpt9A8GW0tJwWfyNJQ_DoV6IZO2_cHv=s1600-w400",
+        "price": 1380.0,
+        "private": false,
+        "available": 10,
+        "sport": "hockey",
+        "days": [
+            "jeudi",
+            "vendredi",
+            "findesemaine"
+        ]
+    },
+    {
+        "address": "3200 Boulevard Laframboise #1690, Saint-Hyacinthe, QC J2S 4Z5, Canada",
+        "location": {
+            "lat": 45.6387895,
+            "lng": -72.9635651
+        },
+        "name": "Sports Experts",
+        "rating": 4,
+        "tel": "+1 450-774-3135",
+        "photos": "https://lh3.googleusercontent.com/p/AF1QipMh5JRXQxoXR1U8-O2qMM-M-cmyPGLW8zoG4csU=s1600-w400",
+        "price": 625.0,
+        "private": false,
+        "available": 8,
+        "sport": "hockey",
+        "days": [
+            "jeudi",
+            "vendredi"
+        ]
+    },
+    {
+        "address": "Stade L-P Gaucher, 900 Rue Turcot, Saint-Hyacinthe, QC J2S 1M2, Canada",
+        "location": {
+            "lat": 45.6350756,
+            "lng": -72.9560575
+        },
+        "name": "Club De Hockey Le Top Design",
+        "tel": "+1 450-252-8677",
+        "price": 488.0,
+        "private": false,
+        "available": 3,
+        "sport": "hockey",
+        "days": [
+            "mercredi",
+            "jeudi",
+            "vendredi",
+            "findesemaine"
+        ]
+    },
+    {
+        "address": "3360 Boulevard Laframboise, Saint-Hyacinthe, QC J2S 4Z4, Canada",
+        "location": {
+            "lat": 45.637664,
+            "lng": -72.968037
+        },
+        "name": "Broli La Source Du Sport",
+        "rating": 4.7,
+        "tel": "+1 450-774-1104",
+        "photos": "https://lh3.googleusercontent.com/p/AF1QipOTGR9fd3WJ11v-LpUb4daAPVGQFjd8fVK8FOig=s1600-w400",
+        "price": 921.0,
+        "private": false,
+        "available": 9,
+        "sport": "hockey",
+        "days": [
+            "lundi",
+            "mardi",
+            "mercredi",
+            "jeudi",
+            "vendredi"
+        ]
+    },
+    {
+        "address": "850 Rue Turcot, Saint-Hyacinthe, QC J2S 1M2, Canada",
+        "location": {
+            "lat": 45.63451299999999,
+            "lng": -72.95404599999999
+        },
+        "name": "Corporation Aquatique Maskoutaine",
+        "rating": 4.6,
+        "tel": "+1 450-778-8335",
+        "photos": "https://lh3.googleusercontent.com/p/AF1QipOm4NUboHxNCX3-1EAsLRG9Spd4M9N5e0pz-e8=s1600-w400",
+        "price": 672.0,
+        "private": false,
+        "available": 2,
+        "sport": "natation",
+        "days": [
+            "mercredi",
+            "jeudi",
+            "vendredi",
+            "findesemaine",
+            "lundi"
+        ]
+    },
+    {
+        "address": "1060 Rue Saint-Joseph, Beloeil, QC J3G 4C9, Canada",
+        "location": {
+            "lat": 45.5738891,
+            "lng": -73.1983972
+        },
+        "name": "Piscine R\u00e9al-Vinet",
+        "rating": 3.7,
+        "tel": "+1 450-536-2923",
+        "price": 1454.0,
+        "private": false,
+        "available": 8,
+        "sport": "natation",
+        "days": []
+    },
+    {
+        "address": "850 Rue Turcot, Saint-Hyacinthe, QC J2S 1M2, Canada",
+        "location": {
+            "lat": 45.6346184,
+            "lng": -72.9542973
+        },
+        "name": "Desjardins Aquatic Centre and Indoor Swimming Pool",
+        "rating": 4.5,
+        "tel": "+1 450-778-8335",
+        "photos": "https://lh3.googleusercontent.com/p/AF1QipOTPMdT-qOB3aLk5SMvqCYhHGXUZKfRNz9lJpht=s1600-w400",
+        "price": 777.0,
+        "private": false,
+        "available": 16,
+        "sport": "natation",
+        "days": [
+            "jeudi",
+            "vendredi",
+            "findesemaine",
+            "lundi"
+        ]
+    },
+    {
+        "address": "100 Rue du Centre-Civique, Mont-Saint-Hilaire, QC J3H 3M8, Canada",
+        "location": {
+            "lat": 45.5646381,
+            "lng": -73.19119859999999
+        },
+        "name": "Centre Aquatique Mont Saint-Hilaire",
+        "rating": 4.5,
+        "tel": "+1 450-467-2854 ext. 2257",
+        "photos": "https://lh3.googleusercontent.com/p/AF1QipMG3v4NgS0by_y2D-1N-tcT6gu-eVKyIX9HlA8X=s1600-w400",
+        "price": 1233.0,
+        "private": false,
+        "available": 10,
+        "sport": "natation",
+        "days": []
+    },
+    {
+        "address": "4230 Rang de la Rivi\u00e8re N, Saint-Jean-Baptiste, QC J0L 2B0, Canada",
+        "location": {
+            "lat": 45.5091717,
+            "lng": -73.1464032
+        },
+        "name": "Golf Area De Rouville",
+        "rating": 4.3,
+        "tel": "+1 450-464-3903",
+        "photos": "https://lh3.googleusercontent.com/p/AF1QipPuF7XFIdC0WNxyBf7Nn7Ala_1gJITfAZ9zuH4-=s1600-w400",
+        "price": 1335.0,
+        "private": true,
+        "available": 11,
+        "sport": "natation",
+        "days": []
+    },
+    {
+        "address": "16 400 J4B 6K5, Boulevard Laflamme, Saint-Hyacinthe, QC J2T 4S9, Canada",
+        "location": {
+            "lat": 45.6136187,
+            "lng": -72.94774319999999
+        },
+        "name": "Club De Boxe St-Hyacinthe",
+        "tel": "+1 450-773-0720",
+        "price": 356.0,
+        "private": true,
+        "available": 12,
+        "sport": "natation",
+        "days": [
+            "vendredi",
+            "findesemaine",
+            "lundi",
+            "mardi",
+            "mercredi"
+        ]
+    },
+    {
+        "address": "1225 Rue Cayouette, Saint-Hyacinthe, QC J2T, Canada",
+        "location": {
+            "lat": 45.622161,
+            "lng": -72.92369719999999
+        },
+        "name": "St-Hyacinthe Piscines",
+        "rating": 4,
+        "tel": "+1 450-778-8335",
+        "photos": "https://lh3.googleusercontent.com/p/AF1QipPJ6Tfslbu0huD1osZeJu4oqABXLEx3VzKFHvqi=s1600-w400",
+        "price": 524.0,
+        "private": true,
+        "available": 8,
+        "sport": "natation",
+        "days": [
+            "mardi",
+            "mercredi",
+            "jeudi",
+            "vendredi",
+            "findesemaine"
+        ]
+    },
+    {
+        "address": "3198 Rue Girouard O, Saint-Hyacinthe, QC J2S 3B7, Canada",
+        "location": {
+            "lat": 45.6173158,
+            "lng": -72.962775
+        },
+        "name": "Centre nautique",
+        "rating": 4.4,
+        "tel": "+1 450-778-8335",
+        "photos": "https://lh3.googleusercontent.com/p/AF1QipPi4glcq6e51HzcWE_7ZAFvBAQceqA1Z-VHckyS=s1600-w400",
+        "price": 470.0,
+        "private": false,
+        "available": 2,
+        "sport": "natation",
+        "days": [
+            "findesemaine",
+            "lundi",
+            "mardi",
+            "mercredi",
+            "jeudi"
+        ]
+    },
+    {
+        "address": "955 Rue Morison, Saint-Hyacinthe, QC J2S 8T7, Canada",
+        "location": {
+            "lat": 45.6312371,
+            "lng": -72.94876239999999
+        },
+        "name": "Ville de Saint-Hyacinthe - Service de l'Urbanisme",
+        "tel": "+1 450-778-8321",
+        "price": 860.0,
+        "private": false,
+        "available": 15,
+        "sport": "natation",
+        "days": [
+            "findesemaine",
+            "lundi"
+        ]
+    },
+    {
+        "address": "393 Boulevard Sir-Wilfrid-Laurier, Beloeil, QC J3G 4H6, Canada",
+        "location": {
+            "lat": 45.55712200000001,
+            "lng": -73.20998999999999
+        },
+        "name": "Journal L'Oeil R\u00e9gional",
+        "rating": 5,
+        "tel": "+1 450-467-1821",
+        "price": 769.0,
+        "private": true,
+        "available": 23,
+        "sport": "natation",
+        "days": [
+            "findesemaine",
+            "lundi",
+            "mardi"
+        ]
+    },
+    {
+        "address": "3100 Boulevard Laframboise, Saint-Hyacinthe, QC J2S 4Z4, Canada",
+        "location": {
+            "lat": 45.6364641,
+            "lng": -72.9670847
+        },
+        "name": "Quebec Centre Local D'Emploi",
+        "rating": 1.8,
+        "tel": "+1 450-778-6589",
+        "price": 1428.0,
+        "private": false,
+        "available": 6,
+        "sport": "natation",
+        "days": [
+            "mercredi",
+            "jeudi",
+            "vendredi",
+            "findesemaine",
+            "lundi"
+        ]
+    },
+    {
+        "address": "2575 Rue Saint-Paul, Saint-Hyacinthe, QC J2T 2A8, Canada",
+        "location": {
+            "lat": 45.61470509999999,
+            "lng": -72.9488253
+        },
+        "name": "Piscine La Providence",
+        "rating": 3,
+        "tel": "+1 450-778-8335",
+        "photos": "https://lh3.googleusercontent.com/p/AF1QipN5jwupwTXmwK5XVImrXy5cpnqklBJCf2HFgBnx=s1600-w400",
+        "price": 1800.0,
+        "private": true,
+        "available": 10,
+        "sport": "natation",
+        "days": []
+    },
+    {
+        "address": "655 Avenue Sainte-Anne, Saint-Hyacinthe, QC J2S 5G4, Canada",
+        "location": {
+            "lat": 45.62438660000001,
+            "lng": -72.9471915
+        },
+        "name": "Le Courrier de Saint-Hyacinthe",
+        "rating": 4.7,
+        "tel": "+1 450-773-6028",
+        "photos": "https://lh3.googleusercontent.com/p/AF1QipP1EDMg-x9iHnfUPXHHVRHPBwdJ-Iay2t9hmRg8=s1600-w400",
+        "price": 1051.0,
+        "private": false,
+        "available": 10,
+        "sport": "natation",
+        "days": [
+            "mardi",
+            "mercredi"
+        ]
+    },
+    {
+        "address": "630 Rue Mountainview, Otterburn Park, QC J3H 2L1, Canada",
+        "location": {
+            "lat": 45.540189,
+            "lng": -73.2041709
+        },
+        "name": "Otterburn-Park Piscine",
+        "rating": 3.8,
+        "tel": "+1 450-536-0288",
+        "price": 1349.0,
+        "private": true,
+        "available": 15,
+        "sport": "natation",
+        "days": [
+            "lundi",
+            "mardi",
+            "mercredi"
+        ]
+    },
+    {
+        "address": "3000 Avenue Boull\u00e9, Saint-Hyacinthe, QC J2S 1H9, Canada",
+        "location": {
+            "lat": 45.6175856,
+            "lng": -72.97502159999999
+        },
+        "name": "C\u00e9gep de Saint-Hyacinthe",
+        "rating": 3.9,
+        "tel": "+1 450-773-6800",
+        "photos": "https://lh3.googleusercontent.com/p/AF1QipOEiLOb5-Tn2Wkd6TFqDyYyhBihyr_wnGINdpgl=s1600-w400",
+        "price": 422.0,
+        "private": true,
+        "available": 2,
+        "sport": "natation",
+        "days": [
+            "mercredi",
+            "jeudi",
+            "vendredi",
+            "findesemaine"
+        ]
+    },
+    {
+        "address": "1925 Chemin Rouville, Saint-Jean-Baptiste, QC J0L 2B0, Canada",
+        "location": {
+            "lat": 45.522946,
+            "lng": -73.14572799999999
+        },
+        "name": "Camping Rouville",
+        "rating": 3.8,
+        "tel": "+1 450-467-6867",
+        "photos": "https://lh3.googleusercontent.com/p/AF1QipMK-TxAu4SYqzENkUKKBL7oIfG2UokEDxx1DHib=s1600-w400",
+        "price": 272.0,
+        "private": false,
+        "available": 15,
+        "sport": "natation",
+        "days": [
+            "mardi",
+            "mercredi",
+            "jeudi",
+            "vendredi"
+        ]
+    },
+    {
+        "address": "1915 Rue Saint-Maurice, Saint-Hyacinthe, QC J2T 5B4, Canada",
+        "location": {
+            "lat": 45.636651,
+            "lng": -72.929216
+        },
+        "name": "Piscines Ext\u00e9rieures",
+        "price": 1015.0,
+        "private": false,
+        "available": 14,
+        "sport": "natation",
+        "days": [
+            "mardi",
+            "mercredi",
+            "jeudi",
+            "vendredi",
+            "findesemaine"
+        ]
+    },
+    {
+        "address": "3800 Bd Casavant O, Saint-Hyacinthe, QC J2S 8E3, Canada",
+        "location": {
+            "lat": 45.6259461,
+            "lng": -72.9862751
+        },
+        "name": "Zone Loisir Mont\u00e9r\u00e9gie",
+        "tel": "+1 450-771-0707",
+        "price": 270.0,
+        "private": true,
+        "available": 11,
+        "sport": "natation",
+        "days": [
+            "jeudi"
+        ]
+    },
+    {
+        "address": "308 Rue Montsabr\u00e9, Beloeil, QC J3G 2H5, Canada",
+        "location": {
+            "lat": 45.55702879999999,
+            "lng": -73.2125451
+        },
+        "name": "Association des Traumatis\u00e9s Cranio-C\u00e9r\u00e9braux de la Mont\u00e9r\u00e9gie",
+        "rating": 4.7,
+        "tel": "+1 450-446-1111",
+        "price": 1150.0,
+        "private": true,
+        "available": 14,
+        "sport": "natation",
+        "days": [
+            "jeudi"
+        ]
+    },
+    {
+        "address": "2420 Rue Bourassa, Saint-Hyacinthe, QC J2S 6A1, Canada",
+        "location": {
+            "lat": 45.6286321,
+            "lng": -72.961848
+        },
+        "name": "Piscine Bourg-Joli",
+        "rating": 5,
+        "tel": "+1 450-778-8335",
+        "photos": "https://lh3.googleusercontent.com/p/AF1QipMfB-6OvM4RwNG8_kof9v4fm8gO5XyLGdYwI0Ty=s1600-w400",
+        "price": 1241.0,
+        "private": true,
+        "available": 15,
+        "sport": "natation",
+        "days": [
+            "jeudi"
+        ]
+    },
+    {
+        "address": "3360 Boulevard Laframboise, Saint-Hyacinthe, QC J2S 4Z4, Canada",
+        "location": {
+            "lat": 45.637664,
+            "lng": -72.968037
+        },
+        "name": "Broli La Source Du Sport",
+        "rating": 4.7,
+        "tel": "+1 450-774-1104",
+        "photos": "https://lh3.googleusercontent.com/p/AF1QipOTGR9fd3WJ11v-LpUb4daAPVGQFjd8fVK8FOig=s1600-w400",
+        "price": 1099.0,
+        "private": false,
+        "available": 24,
+        "sport": "soccer",
+        "days": []
+    },
+    {
+        "address": "2e \u00e9tage, QC, Canada, Ctre BMO, 2730 Avenue Beauparlant, Saint-Hyacinthe, QC J2S 4M8, Canada",
+        "location": {
+            "lat": 45.6356768,
+            "lng": -72.9570968
+        },
+        "name": "Association R\u00e9gionale de Soccer Richelieu-Yamaska",
+        "rating": 4,
+        "tel": "+1 450-250-0521",
+        "photos": "https://lh3.googleusercontent.com/p/AF1QipMrR4b2hSj-5mWjHvJFe1dPjOVYSdX_gmfoRGCr=s1600-w400",
+        "price": 244.0,
+        "private": false,
+        "available": 14,
+        "sport": "soccer",
+        "days": [
+            "mardi",
+            "mercredi"
+        ]
+    },
+    {
+        "address": "2520 Avenue Sainte-Catherine, Saint-Hyacinthe, QC J2S 0G3, Canada",
+        "location": {
+            "lat": 45.62839899999999,
+            "lng": -72.962507
+        },
+        "name": "Community Recreation Center Bourg-Joli",
+        "rating": 4,
+        "tel": "+1 450-773-1824",
+        "photos": "https://lh3.googleusercontent.com/p/AF1QipNnDcxwhuXdBCDNDg5qzyB3HIuxDf7RTZTszMs2=s1600-w400",
+        "price": 940.0,
+        "private": false,
+        "available": 13,
+        "sport": "soccer",
+        "days": [
+            "lundi",
+            "mardi",
+            "mercredi"
+        ]
+    },
+    {
+        "address": "1255 Rue Dalaire, Saint-Hyacinthe, QC J2S 9A2, Canada",
+        "location": {
+            "lat": 45.6432379,
+            "lng": -72.950306
+        },
+        "name": "Terrain soccer PHD #3",
+        "rating": 4,
+        "price": 1483.0,
+        "private": false,
+        "available": 19,
+        "sport": "soccer",
+        "days": [
+            "jeudi"
+        ]
+    },
+    {
+        "address": "1400 Boulevard Casavant E, Saint-Hyacinthe, QC J2S 0G2, Canada",
+        "location": {
+            "lat": 45.64798769999999,
+            "lng": -72.9503398
+        },
+        "name": "PUMA",
+        "rating": 3.7,
+        "tel": "+1 450-778-1354",
+        "photos": "https://lh3.googleusercontent.com/p/AF1QipP0Y6Y5lB8_pkNH769lM1E9AozGQSsWpZCupvzM=s1600-w400",
+        "price": 881.0,
+        "private": false,
+        "available": 23,
+        "sport": "soccer",
+        "days": [
+            "lundi",
+            "mardi",
+            "mercredi"
+        ]
+    },
+    {
+        "address": "16595, av Savoie, Saint-Hyacinthe, QC J2T 3N3, Canada",
+        "location": {
+            "lat": 45.61894169999999,
+            "lng": -72.9351523
+        },
+        "name": "Loisirs Saint-Joseph",
+        "tel": "+1 450-774-3886",
+        "price": 1462.0,
+        "private": true,
+        "available": 12,
+        "sport": "soccer",
+        "days": [
+            "vendredi",
+            "findesemaine",
+            "lundi",
+            "mardi",
+            "mercredi"
+        ]
+    },
+    {
+        "address": "21 Place Mauriac, Saint-Liboire, QC J0H 1R0, Canada",
+        "location": {
+            "lat": 45.64905219999999,
+            "lng": -72.7592568
+        },
+        "name": "Loisirs St-Liboire",
+        "rating": 4.4,
+        "tel": "+1 450-793-4825",
+        "photos": "https://lh3.googleusercontent.com/p/AF1QipOFbyk3UFs7JL5AEqTUh5wrhFHDfGYrCd1ge-YA=s1600-w400",
+        "price": 1865.0,
+        "private": false,
+        "available": 18,
+        "sport": "soccer",
+        "days": [
+            "jeudi",
+            "vendredi",
+            "findesemaine",
+            "lundi",
+            "mardi"
+        ]
+    },
+    {
+        "address": "2450 Avenue Raymond, Saint-Hyacinthe, QC J2S 5W3, Canada",
+        "location": {
+            "lat": 45.6290517,
+            "lng": -72.9593218
+        },
+        "name": "Soccer Action",
+        "tel": "+1 450-250-3668",
+        "price": 799.0,
+        "private": false,
+        "available": 14,
+        "sport": "soccer",
+        "days": []
+    },
+    {
+        "address": "850 rue Turcot, Saint-Hyacinthe, QC J2S 1M2, Canada",
+        "location": {
+            "lat": 45.63456470000001,
+            "lng": -72.9541325
+        },
+        "name": "FC Saint-Hyacinthe",
+        "rating": 4.3,
+        "tel": "+1 450-778-8355",
+        "price": 1187.0,
+        "private": false,
+        "available": 5,
+        "sport": "soccer",
+        "days": [
+            "jeudi",
+            "vendredi"
+        ]
+    },
+    {
+        "address": "3549 Boulevard Laurier, Sainte-Marie-Madeleine, QC J0H, Canada",
+        "location": {
+            "lat": 45.5891917,
+            "lng": -73.1199495
+        },
+        "name": "Stricken crossfit",
+        "rating": 5,
+        "tel": "+1 514-207-4644",
+        "photos": "https://lh3.googleusercontent.com/p/AF1QipNyrKltvFwIHuOHQxdytb4E47f_UL4WBuzXX40P=s1600-w400",
+        "price": 723.0,
+        "private": false,
+        "available": 11,
+        "sport": "karate",
+        "days": [
+            "jeudi",
+            "vendredi",
+            "findesemaine",
+            "lundi"
+        ]
+    },
+    {
+        "address": "347 Rue Duvernay, Beloeil, QC J3G 5S8, Canada",
+        "location": {
+            "lat": 45.56519,
+            "lng": -73.2095029
+        },
+        "name": "Karat\u00e9 Sunfuki Beloeil",
+        "rating": 4.7,
+        "tel": "+1 450-813-6623",
+        "price": 1518.0,
+        "private": true,
+        "available": 12,
+        "sport": "karate",
+        "days": [
+            "jeudi",
+            "vendredi",
+            "findesemaine",
+            "lundi",
+            "mardi"
+        ]
+    },
+    {
+        "address": "99 Rue du Centre-Civique, Mont-Saint-Hilaire, QC J3H 4X4, Canada",
+        "location": {
+            "lat": 45.564076,
+            "lng": -73.19117899999999
+        },
+        "name": "Workshop Ballet Classical De St-Hilaire",
+        "tel": "+1 514-971-0462",
+        "price": 531.0,
+        "private": false,
+        "available": 15,
+        "sport": "karate",
+        "days": [
+            "findesemaine",
+            "lundi",
+            "mardi",
+            "mercredi",
+            "jeudi"
+        ]
+    },
+    {
+        "address": "308 Rue Montsabr\u00e9, Beloeil, QC J3G 2H5, Canada",
+        "location": {
+            "lat": 45.5569299,
+            "lng": -73.21259189999999
+        },
+        "name": "Fung Loy Kok Tai Chi Tao\u00efste - Beloeil",
+        "tel": "+1 450-679-1018",
+        "photos": "https://lh3.googleusercontent.com/p/AF1QipN4spS3aRqyKEw3ccaMT-NW4I0_PQKwfouHWCy5=s1600-w400",
+        "price": 295.0,
+        "private": false,
+        "available": 2,
+        "sport": "karate",
+        "days": [
+            "jeudi",
+            "vendredi",
+            "findesemaine",
+            "lundi"
+        ]
+    },
+    {
+        "address": "Unisant\u00e9, Mont-Saint-Hilaire, QC J3H 3L4, Canada",
+        "location": {
+            "lat": 45.5635757,
+            "lng": -73.19693149999999
+        },
+        "name": "asahi karat\u00e9 shotokan skif",
+        "tel": "+1 438-391-8814",
+        "price": 768.0,
+        "private": false,
+        "available": 0,
+        "sport": "karate",
+        "days": [
+            "jeudi",
+            "vendredi",
+            "findesemaine"
+        ]
+    },
+    {
+        "address": "6660 Boulevard Laurier O, Saint-Hyacinthe, QC J2S, Canada",
+        "location": {
+            "lat": 45.6017287,
+            "lng": -72.9940979
+        },
+        "name": "Crossfit beast st-hyacinthe",
+        "rating": 5,
+        "tel": "+1 514-679-3969",
+        "price": 999.0,
+        "private": true,
+        "available": 18,
+        "sport": "karate",
+        "days": []
+    },
+    {
+        "address": "223, boul Cartier, Beloeil, QC J3G 3R2, Canada",
+        "location": {
+            "lat": 45.5535062,
+            "lng": -73.21518809999999
+        },
+        "name": "Karat\u00e9 Kyokushin Tiger Inc",
+        "tel": "+1 450-467-9480",
+        "price": 764.0,
+        "private": false,
+        "available": 11,
+        "sport": "karate",
+        "days": [
+            "mercredi"
+        ]
+    },
+    {
+        "address": "1915 Rue Saint-Maurice, Saint-Hyacinthe, QC J2T 5B4, Canada",
+        "location": {
+            "lat": 45.637075,
+            "lng": -72.93069899999999
+        },
+        "name": "Fung Loy Kok Tai Chi Tao\u00efste - Saint-Hyacinthe",
+        "rating": 5,
+        "tel": "+1 888-824-2441",
+        "photos": "https://lh3.googleusercontent.com/p/AF1QipMPc9AMXUYZTv2_srNXLkmIJtIGhkIBQwSxy5je=s1600-w400",
+        "price": 371.0,
+        "private": false,
+        "available": 24,
+        "sport": "karate",
+        "days": [
+            "findesemaine",
+            "lundi",
+            "mardi",
+            "mercredi"
+        ]
+    },
+    {
+        "address": "3050 Boulevard Choquette, Saint-Hyacinthe, QC J2S 1H1, Canada",
+        "location": {
+            "lat": 45.633521,
+            "lng": -72.97191699999999
+        },
+        "name": "Centre des Arts Martiaux Guy Brodeur",
+        "rating": 5,
+        "tel": "+1 450-778-7070",
+        "photos": "https://lh3.googleusercontent.com/p/AF1QipOuxGb2cFNqieL3QEfLu9uSKBgOKsWheKNomtdk=s1600-w400",
+        "price": 825.0,
+        "private": true,
+        "available": 23,
+        "sport": "karate",
+        "days": []
+    },
+    {
+        "address": "160 Mont\u00e9e des Trente, Mont-Saint-Hilaire, QC J3H 2R4, Canada",
+        "location": {
+            "lat": 45.5569042,
+            "lng": -73.1996576
+        },
+        "name": "Prostar MMA",
+        "rating": 4,
+        "tel": "+1 514-316-3113",
+        "photos": "https://lh3.googleusercontent.com/p/AF1QipPKw3d--V_fBjmcN7OsS2VtbPEAwZuoohRa_5Cb=s1600-w400",
+        "price": 456.0,
+        "private": false,
+        "available": 14,
+        "sport": "karate",
+        "days": [
+            "vendredi",
+            "findesemaine",
+            "lundi",
+            "mardi"
+        ]
+    },
+    {
+        "address": "250 Rue Hubert, Beloeil, QC J3G 2S9, Canada",
+        "location": {
+            "lat": 45.5694212,
+            "lng": -73.20461279999999
+        },
+        "name": "Center Martial Arts Robert Paquette (Depuis 1977)",
+        "rating": 4.7,
+        "tel": "+1 450-626-3456",
+        "photos": "https://lh3.googleusercontent.com/p/AF1QipMhv2farKimjQ2DIBZvf3wZSbpuTO8ec7hEDkbC=s1600-w400",
+        "price": 1938.0,
+        "private": false,
+        "available": 20,
+        "sport": "karate",
+        "days": [
+            "jeudi",
+            "vendredi",
+            "findesemaine",
+            "lundi"
+        ]
+    }
+]

@@ -2449,7 +2449,8 @@ def AddressComplete_Interactive_Find_v2_10(search):
     requestUrl += "&" +  urllib.parse.urlencode({"LanguagePreference":LanguagePreference})
     requestUrl += "&" +  urllib.parse.urlencode({"MaxSuggestions":MaxSuggestions})
     requestUrl += "&" +  urllib.parse.urlencode({"MaxResults":MaxResults})
-
+    print(requestUrl)
+    exit()
     #Get the data
     dataDoc = xml.dom.minidom.parseString(urllib.request.urlopen(requestUrl).read())
 
