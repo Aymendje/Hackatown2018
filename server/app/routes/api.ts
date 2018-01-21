@@ -83,8 +83,7 @@ module Route {
             // let age = 15;
             // let types = ["Patin", "Ete","Soccer"];
             // let days = ["Mardi","Jeudi"];
-            console.log(req.query)
-            let age = req.query['age'];
+            //console.log(req.query)
             let types = req.query['types'];
             types = JSON.parse(types);
             let days = req.query['days'];
@@ -92,22 +91,23 @@ module Route {
             let lat = req.query['lat'];
             let long = req.query['long'];
             let dist = req.query['distance'];
-            console.log(days)
-            console.log(types)
+            //console.log(days)
+            //console.log(types)
             sportEvent.find({
-                // Find events based on age
-                minAge: {
-                    $lte: age
-                },
+                // // Find events based on age
+                // minAge: {
+                //     $lte: age
+                // },
             }).then(
                 (sportEvents:any[])=>{
                     let filteredData = sportEvents.filter((v,i,a) =>
                     {
                         // Check for tags intesection
-                        return this.intersect(types,v.tags).length > 0 &&
+                        let tags = [v.sport]
+                        return this.intersect(types,tags).length > 0 &&
                         // Check for date intersection 
                                this.intersect(days,v.days).length > 0 &&
-                               this.calculateDistance(v.location.lat,v.location.lng, lat, long) <dist;
+                               this.calculateDistance(v.location.lat,v.location.lng, lat, long) < dist;
                     });
                     res.json(filteredData);
                 }
