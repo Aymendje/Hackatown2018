@@ -43,13 +43,12 @@ module Route {
         }
 
         public getDayCare(req:Request, res :Response, next:NextFunction): void{
+            let dist = req.query['distance'];
+            let price = req.query['price'];
+            let children = req.query['children'];
+            let lat = req.query['lat'];
+            let long = req.query['long'];
             
-            let dist = req.params.distance;
-            let price = req.params.price;
-            let children = req.params.children;
-            let lat = req.params.lat;
-            let long = req.params.long;
-
             dayCare.find(
                 {
                     price :{
@@ -63,9 +62,11 @@ module Route {
                     (dayCares:any[])=>{
                         let filteredData = dayCares.filter(
                             (v,i,a)=> {
-                                return this.calculateDistance(v.location.lat,v.location.lng, lat, long) <dist;  
+                                let calDistance = this.calculateDistance(v.location.lat,v.location.lng, lat, long);
+                                return  calDistance < dist;  
                             }
                         )
+                        
                         res.json(filteredData);
                     }
                 ).catch((reason: any)=>{
