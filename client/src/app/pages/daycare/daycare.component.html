@@ -70,8 +70,21 @@
             <nb-card-body>
                 <p>Prix : {{daycare.price}} $</p>
                 <p>Places disponibles: {{daycare.available}}</p>
-                <button class="btn btn-success btn-round" (click)="query()"> Inscription</button>
             </nb-card-body>
+            <nb-card-footer>
+                <div class="row">
+                    <div class="col-md-7 form-group">
+                        <select class="form-control">
+                            <option>Emilio Rivera</option>
+                            <option>Nikolay Radoev</option>
+                            <option>Aymen Djellal</option>
+                        </select>
+                    </div>
+                    <div class="col-md-5">
+                        <button class="btn btn-success btn-round" (click)="query()"> Inscrire</button>
+                    </div>
+                </div>
+            </nb-card-footer>
         </nb-card>
     </div>
 </div>

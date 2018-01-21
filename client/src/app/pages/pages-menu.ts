@@ -18,6 +18,14 @@ export const MENU_ITEMS: NbMenuItem[] = [
             {
                 title: 'Mes garderies',
                 link: '/daycare/my',
+            },
+            {
+                title: 'Mes factures',
+                link: '/daycare/receipts',
+            },
+            {
+                title: 'Mes alertes',
+                link: '/daycare/alerts',
             }
         ],
     },
@@ -31,7 +39,15 @@ export const MENU_ITEMS: NbMenuItem[] = [
             },
             {
                 title: 'Mes inscriptions',
-                link: '/sports/my',
+                link: '/sports/inscriptions',
+            },
+            {
+                title: 'Mes reçus',
+                link: '/sports/receipts',
+            },
+            {
+                title: 'Prochains tournois',
+                link: '/sports/tournaments',
             }
         ],
     },
