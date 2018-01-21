@@ -13,7 +13,7 @@ module Route {
         }
 
         public authLogin(req: Request, res: Response, next: NextFunction): void {
-            // console.log(req.body)
+            console.log(req.body)
             let email = req.body.email;
             let pwd = req.body.password;
             user.findOne({
@@ -188,7 +188,7 @@ module Route {
             console.log("lat :" + lat);
             console.log("long: "+ long);
             let types = ["Fire"];
-            let description = "SHITS ON FIRE YO!";
+            let description = "Alert!";
 
             // let name = req.body.name;
             // let types = req.body.types;
@@ -212,11 +212,13 @@ module Route {
             let kidId = req.body.kidId;
             let eventId = req.body.eventId;
             let eventType = req.body.eventType;
+            let cost = req.body.cost;
 
             let newRegistration = new registration();
             newRegistration.kidId = kidId;
             newRegistration.eventId = eventId;
             newRegistration.eventType = eventType;
+            newRegistration.eventType = cost;
 
             newRegistration.save();
             res.send(201);

@@ -8,7 +8,7 @@ import { SportViewModel } from './sports.viewmodel';
 @Injectable()
 export class SportsService {
 
-    private baseUrl = "http://localhost:3000/api/sportEvent";
+    private baseUrl = "http://132.207.203.37:3000/api/sportEvent";
 
     constructor(private http: Http) {
 
@@ -37,5 +37,23 @@ export class SportsService {
             .then((res) => {
                 return res.json();
             });
+    }
+
+    public registerKid(sportEvent: SportViewModel) {
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let body = {
+            kidId : sportEvent.kid,
+            eventId : sportEvent.id,
+            eventType: "sports"
+        }
+        let options = new RequestOptions(
+            { 
+                headers: headers,
+                body: body
+            }
+        );
+        this.http.post(`http://localhost:3000/api/registration`, body).toPromise().then((res)=>{
+            return res.json();
+        });
     }
 }

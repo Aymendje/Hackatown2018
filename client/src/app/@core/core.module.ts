@@ -21,7 +21,7 @@ const NB_CORE_PROVIDERS = [
               success: '/pages/'
             }
           },
-          baseEndpoint: 'http://localhost:3000',
+          baseEndpoint: 'http://132.207.203.37:3000',
         },
       },
     },

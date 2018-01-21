@@ -9,7 +9,9 @@ import { GmapsComponent } from './gmaps.component';
 @NgModule({
     imports: [
         ThemeModule,
-        AgmCoreModule.forRoot(),
+        AgmCoreModule.forRoot({
+            apiKey: 'AIzaSyCbMUwGg8XM6e9HXKTnjS1cY50Cgm9jDDM'
+        }),
         CommonModule,
         FormsModule,
     ],
