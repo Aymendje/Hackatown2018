@@ -1,8 +1,10 @@
 import { Request, Response, NextFunction } from "express";
-// import { Message } from "../../../common/communication/message";
 import "reflect-metadata";
 import { injectable, } from "inversify";
-import { dayCare,sportEvent } from "../db";
+import { dayCare,sportEvent,dayCareCamp,IDayCareCampModel,alert } from "../db";
+
+import { IUserAuthInfo } from "../IUserAuthInfo";
+import { User } from "../User";
 module Route {
     const AcceptedUsers: IUserAuthInfo[] = [
         {
@@ -11,12 +13,6 @@ module Route {
             otherInformation: 'Je suis un chevreuil'
         }
     ]
-
-    export interface IUserAuthInfo{
-        email: string;
-        password: string;
-        otherInformation: string;
-    }
 
     @injectable()
     export class Api {
@@ -34,8 +30,14 @@ module Route {
             })
             console.log(userFound)
             if (userFound){
+                let theUser = new User();
+                theUser.Gender = true;
+                theUser.Age = 42;
+                theUser.UserName = 'Yonni'
                 res.json({
-                    'token': 'abcde'
+                    'data': {
+                        'token': JSON.stringify(theUser)
+                    }
                 })
             } else {
                 res.sendStatus(403);
@@ -52,10 +54,10 @@ module Route {
             dayCare.find(
                 {
                     price :{
-                        $lt : price
+                        $lte : price
                     },
                     available :{
-                        $gt : children
+                        $gte : children
                     }
                 }).
                 then(
@@ -85,10 +87,14 @@ module Route {
             let age = req.params.age;
             let types = req.params.types;
             let days = req.params.days;
+            let lat = req.params.lat;
+            let long = req.params.long;
+            let dist = req.params.distance;
+
             sportEvent.find({
                 // Find events based on age
                 minAge: {
-                    $lt: age
+                    $lte: age
                 },
             }).then(
                 (sportEvents:any[])=>{
@@ -97,7 +103,8 @@ module Route {
                         // Check for tags intesection
                         return this.intersect(types,v.tags).length > 0 &&
                         // Check for date intersection 
-                               this.intersect(days,v.days).length > 0;
+                               this.intersect(days,v.days).length > 0 &&
+                               this.calculateDistance(v.location.lat,v.location.lng, lat, long) <dist;
                     });
                     res.json(filteredData);
                 }
@@ -109,11 +116,70 @@ module Route {
         }
 
         public getDayCareCamp(req:Request,res:Response, next:NextFunction) : void{
-            
+            // Test data
+        //    let testminAge = 5;
+        //    let testmaxAge = 10;
+        //    let types = ["Science", "Art"];
+        //    let startDate = new Date(2018,4,5);
+        //    let endDate = new Date(2018,8,18);
+
+        let testminAge = req.params.minAge;
+        let testmaxAge = req.params.maxAge;
+        let types = req.params.tags;
+        let startDate = req.params.startDate;
+        let endDate =req.params.endDate;
+        let lat = req.params.lat;
+        let long = req.params.long;
+        let dist = req.params.distance;
+
+            dayCareCamp.find({
+                minAge:{
+                    $lte: testminAge
+                },
+                maxAge :{
+                    $gte:testmaxAge
+                }
+            }).then(
+                (dayCareCamps:IDayCareCampModel[])=>{
+                    let filteredData = dayCareCamps.filter((v,i,a)=>
+                    {
+                        let validStartDate = v.startDate < startDate;
+                        let validEndDate = v.endDate > endDate;
+                        return this.intersect(types,v.tags).length > 0
+                        &&
+                        validStartDate
+                        &&
+                        validEndDate
+                        &&
+                        this.calculateDistance(v.location.lat,v.location.lng, lat, long) <dist;
+                    });
+                res.json(filteredData);     
+            }).catch((reason)=>{
+                console.log(reason);
+                res.send(500);
+            })
         }
 
         public getAlerts(req:Request, res:Response, next:NextFunction): void{
+          
+            // let dist = 20;
+            // let lat = 45.5801883;
+            // let long = -73.1624795;
+            // let types = ["Fire","Yonni"];
 
+            let dist = req.params.distance;
+            let lat = req.params.lat;
+            let long = req.params.long;
+            let types = req.params.types;
+            alert.find({ }).then((alerts:any[])=>{
+                let filteredData = alerts.filter((v,i,a)=>{
+                    let calculatedDistance = this.calculateDistance(v.location.lat,v.location.lng, lat, long);
+                    let hasTypeIntersect = this.intersect(types,v.tags).length > 0;
+                    return calculatedDistance < dist && hasTypeIntersect;
+                });
+                res.json(filteredData);     
+            });
+    
         }
 
         public createAlert(req:Request, res:Response, next:NextFunction) : void{
