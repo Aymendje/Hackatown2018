@@ -95,3 +95,7 @@ input::-moz-focus-outer {
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+
+.sliders {
+    margin-top: 20px;
+}

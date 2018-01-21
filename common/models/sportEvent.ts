@@ -9,7 +9,9 @@ export interface ISportEvent {
     }
     price : number;
     available: number;
-    minAge : number;
+    private : boolean;
+    rating : number;
+    photo : string;
+    sport : string;
     days : string[];
-    tags : string[];
 };

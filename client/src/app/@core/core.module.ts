@@ -14,9 +14,12 @@ const NB_CORE_PROVIDERS = [
       email: {
         service: NbEmailPassAuthProvider,
         config: {
-          delay: 3000,
+          delay: 1000,
           login: {
             rememberMe: true,
+            redirect: {
+              success: '/pages/'
+            }
           },
           baseEndpoint: 'http://localhost:3000',
         },

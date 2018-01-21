@@ -1,4 +1,4 @@
-import random
+import random, base64
 API = base64.b64decode(b'WU4xNy1OSjM4LVdBMjctV1I4OA==').decode()
 postalCode = """J2R 0A1
 J2R 1A1
@@ -2449,7 +2449,8 @@ def AddressComplete_Interactive_Find_v2_10(search):
     requestUrl += "&" +  urllib.parse.urlencode({"LanguagePreference":LanguagePreference})
     requestUrl += "&" +  urllib.parse.urlencode({"MaxSuggestions":MaxSuggestions})
     requestUrl += "&" +  urllib.parse.urlencode({"MaxResults":MaxResults})
-
+    print(requestUrl)
+    exit()
     #Get the data
     dataDoc = xml.dom.minidom.parseString(urllib.request.urlopen(requestUrl).read())
 
@@ -2467,7 +2468,8 @@ def AddressComplete_Interactive_Find_v2_10(search):
             value = dataNode.attributes[key].value
             rowData[key] = value
             results.append(rowData)
-
+    print(results)
+    exit()
     return results
 
     #FYI: The output is an array of key value pairs, the keys being:

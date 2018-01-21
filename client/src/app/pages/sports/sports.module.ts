@@ -5,6 +5,7 @@ import { CommonModule }   from '@angular/common';
 import { MapsModule } from './../maps/maps.module';
 
 import { SportsRoutingModule, routedComponents } from './sports-routing.module';
+import { SportsService } from './sports.service';
 
 @NgModule({
     imports: [
@@ -17,5 +18,8 @@ import { SportsRoutingModule, routedComponents } from './sports-routing.module';
     declarations: [
         ...routedComponents,
     ],
+    providers: [
+        SportsService
+    ]
 })
 export class SportsModule { }

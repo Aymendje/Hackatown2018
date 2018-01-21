@@ -22,8 +22,10 @@ export class GmapsComponent implements OnInit, OnChanges {
     public markers;
     @Output() onClick = new EventEmitter<MouseEvent>();
 
+    private lat = 45.6307;
+    private lng = -72.9563;
+
     public ngOnInit() {
-        console.log(this.markers);
     }
 
     public onClicked(event: MouseEvent) {
@@ -33,7 +35,4 @@ export class GmapsComponent implements OnInit, OnChanges {
     public ngOnChanges(changes: {[propKey: string]: SimpleChange}) {
         // console.log(this.markers);
     }
-
-    lat = 45.6307;
-    lng = -72.9563;
 }

@@ -4,6 +4,11 @@
             <nb-card-header>Filtrer les résultats de recherche</nb-card-header>
             <nb-card-body>
                 <div class="row">
+                    <div class="col-md-12 input-group">
+                        <input (input)="text = $event.target.value" [value]="text" type="text" placeholder="Garderie d'Avignon" class="form-control"/>
+                    </div>
+                </div>
+                <div class="row sliders">
                     <div class="col-md-6">
                         <h5>Distance</h5>
                     </div>
@@ -27,7 +32,7 @@
                 </div>
                 <div class="row daycare-row">
                     <div class="col-md-6">
-                        <h5>Nombre d'enfants</h5>
+                        <h5>Places disponibles</h5>
                     </div>
                     <div class="col-md-6 range-slider">
                         <div class="range-slider">
@@ -55,8 +60,8 @@
 </div>
 <div class="row">
     <div *ngFor="let daycare of daycares" class="col-md-3">
-        <nb-card (click)="select(daycare)">
-            <nb-card-header>
+        <nb-card>
+            <nb-card-header (click)="select(daycare)">
                 <span class="title">{{daycare.name}}</span>
                 <span class="float-right">
                     {{daycare.distance}} km
@@ -66,6 +71,20 @@
                 <p>Prix : {{daycare.price}} $</p>
                 <p>Places disponibles: {{daycare.available}}</p>
             </nb-card-body>
+            <nb-card-footer>
+                <div class="row">
+                    <div class="col-md-7 form-group">
+                        <select class="form-control">
+                            <option>Emilio Rivera</option>
+                            <option>Nikolay Radoev</option>
+                            <option>Aymen Djellal</option>
+                        </select>
+                    </div>
+                    <div class="col-md-5">
+                        <button class="btn btn-success btn-round" (click)="query()"> Inscrire</button>
+                    </div>
+                </div>
+            </nb-card-footer>
         </nb-card>
     </div>
 </div>
