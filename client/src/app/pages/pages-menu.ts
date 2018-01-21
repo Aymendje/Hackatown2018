@@ -20,7 +20,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
                 link: '/daycare/my',
             },
             {
-                title: 'Mes reçus',
+                title: 'Mes factures',
                 link: '/daycare/receipts',
             },
             {
