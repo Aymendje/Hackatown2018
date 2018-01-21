@@ -67,23 +67,77 @@ def getPhoto(reference, key = GOOGLE_API, maxwidth = 400):
 	time.sleep(SLEEP_TIME)
 	return requests.get(url=URL, allow_redirects=True).url
 
-def fakedata(item):
+def fakedataPlace(item):
 	item["price"] = int(random.randrange(PRICE_MIN, PRICE_MAX) * 100 + 0.5)/100
 	item["private"] = bool(random.getrandbits(1))
 	item["available"] = int(random.randrange(MAX_KIDS))
 	return item
 
-def generateJSON(words):
+def generateJSONPlace(words):
 	items = []
 	for item in words:
 		items += LookForItem(item)
 	js = []
 	for i in items:
 		p = getPlaceInfo(i)
-		p = fakedata(p)
+		p = fakedataPlace(p)
 		js.append(p)
 	return js
 
+
+
+def getPlaceInfo(placeid, key = GOOGLE_API):
+	URL = "https://maps.googleapis.com/maps/api/place/details/json?placeid="
+	URL += placeid
+	URL += "&key=" + GOOGLE_API
+	time.sleep(SLEEP_TIME)
+	data = json.loads(requests.get(url=URL).text)
+	data = data["result"]
+	place = {}
+
+	place["address"] = data["formatted_address"]
+	place["location"] = data["geometry"]["location"]
+	place["name"] = data["name"]
+	if("rating" in data):
+		place["rating"] = data["rating"]
+	if("international_phone_number" in data):
+		place["tel"] = data["international_phone_number"]
+	if("photos" in data):
+		place["photos"] = getPhoto(data["photos"][0]["photo_reference"])
+	return place
+
+def fakedataSports(item, sport):
+	item["price"] = int(random.randrange(PRICE_MIN, PRICE_MAX) * 100 + 0.5)/100
+	item["private"] = bool(random.getrandbits(1))
+	item["available"] = int(random.randrange(MAX_KIDS))
+	item["sport"] = sport
+	return item
+
+def generateJSONSports(words):
+	items = []
+	for item in words:
+		items += LookForItem(item)
+	for i in items:
+		p = getPlaceInfo(i)
+		p = fakedata(p, words)
+		js.append(p)
+	return js
+
+"""
 item = ["garderie", "daycare", "childcare"]
 with open('DayCare.json', 'w') as outfile:
-    json.dump(generateJSON(item), outfile)
+    json.dump(generateJSONPlace(item), outfile)
+"""
+item = []
+items = ["archery"]#, "badminton", "baseball", "softball", "basketball", "beach volleyball", "boxing", "canoe", "kayak", "climbing", "cycling ", "diving", "equestrian", "fencing", "field hockey", "golf", "gymnastics", "handball", "judo", "karate", "pentathlon", "roller sport", "rowing", "sailing", "shooting", "soccer", "football", "swimming", "surfing", "table tennis", "taekwondo", "tennis", "track and field", "triathlon", "volleyball", "water polo", "weightlifting", "wrestling", "baseball ", "rugby", "squash", "wakeboard", "wushu", "dancing", "bowling", "netball", "Boxing", "Pankration", "Running", "Wrestling"]
+for it in [[i] for i in items]:
+	item += generateJSONSports(it)
+
+
+sortedlist = []
+for item in item:
+    if item not in sortedlist:
+        sortedlist.append(item)
+
+with open('Sports.json', 'w') as outfile:
+    json.dump(sortedlist, outfile)
