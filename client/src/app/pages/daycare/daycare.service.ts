@@ -25,7 +25,7 @@ export class DayCareService {
             eventId : eventId,
             eventType: 'daycare'
         }
-        return this.http.post('http://localhost:3000/api/registration', body)
+        return this.http.post('http://132.207.203.37:3000/api/registration', body)
             .toPromise()
             .then((res) => {
                 return res.json()
