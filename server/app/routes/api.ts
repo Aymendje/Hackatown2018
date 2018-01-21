@@ -1,8 +1,10 @@
 import { Request, Response, NextFunction } from "express";
-// import { Message } from "../../../common/communication/message";
 import "reflect-metadata";
 import { injectable, } from "inversify";
 import { dayCare,sportEvent,dayCareCamp,IDayCareCampModel,alert } from "../db";
+
+import { IUserAuthInfo } from "../IUserAuthInfo";
+import { User } from "../User";
 module Route {
     const AcceptedUsers: IUserAuthInfo[] = [
         {
@@ -11,12 +13,6 @@ module Route {
             otherInformation: 'Je suis un chevreuil'
         }
     ]
-
-    export interface IUserAuthInfo{
-        email: string;
-        password: string;
-        otherInformation: string;
-    }
 
     @injectable()
     export class Api {
@@ -34,8 +30,14 @@ module Route {
             })
             console.log(userFound)
             if (userFound){
+                let theUser = new User();
+                theUser.Gender = true;
+                theUser.Age = 42;
+                theUser.UserName = 'Yonni'
                 res.json({
-                    'token': 'abcde'
+                    'data': {
+                        'token': JSON.stringify(theUser)
+                    }
                 })
             } else {
                 res.sendStatus(403);
