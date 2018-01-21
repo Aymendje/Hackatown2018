@@ -67,7 +67,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
     },
     {
         title: 'Alertes routieres',
-        icon: 'ion-ios-people',
+        icon: 'ion-android-warning',
         children: [
             {
                 title: 'Alerter routieres',
