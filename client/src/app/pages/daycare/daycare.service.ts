@@ -8,7 +8,7 @@ import { DayCareViewModel } from './daycare.viewmodel';
 @Injectable()
 export class DayCareService {
 
-    private baseUrl = "http://localhost:3000/api/daycare";
+    private baseUrl = "http://132.207.203.37:3000/api/daycare";
 
     constructor(private http: Http) {
 

@@ -8,7 +8,7 @@ import { AlertViewModel } from './alert.viewmodel';
 @Injectable()
 export class AlertService {
 
-    private baseUrl = "http://localhost:3000/api/alerts";
+    private baseUrl = "http://132.207.203.37:3000/api/alerts";
 
     constructor(private http: Http) {
 

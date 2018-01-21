@@ -13,7 +13,7 @@ module Route {
         }
 
         public authLogin(req: Request, res: Response, next: NextFunction): void {
-            // console.log(req.body)
+            console.log(req.body)
             let email = req.body.email;
             let pwd = req.body.password;
             user.findOne({

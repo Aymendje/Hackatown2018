@@ -8,7 +8,7 @@ import { SportViewModel } from './sports.viewmodel';
 @Injectable()
 export class SportsService {
 
-    private baseUrl = "http://localhost:3000/api/sportEvent";
+    private baseUrl = "http://132.207.203.37:3000/api/sportEvent";
 
     constructor(private http: Http) {
 
