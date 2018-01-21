@@ -10,7 +10,7 @@ import { GmapsComponent } from './gmaps.component';
     imports: [
         ThemeModule,
         AgmCoreModule.forRoot({
-            apiKey: 'AIzaSyCbMUwGg8XM6e9HXKTnjS1cY50Cgm9jDDM'
+            apiKey: 'API-KEY-HERE'
         }),
         CommonModule,
         FormsModule,
