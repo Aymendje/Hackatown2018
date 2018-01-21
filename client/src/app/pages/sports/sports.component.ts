@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 import { SportsService } from './sports.service';
 import { ISportEvent } from '../../../../../common/models/sportEvent';
@@ -36,8 +36,10 @@ export class SportsComponent implements OnInit {
     public basketballChecked: boolean;
     public soccerChecked: boolean;
     public karateChecked: boolean;
+
+    private markers: Array<any>;
     
-    constructor(private sportsService: SportsService) {
+    constructor(private sportsService: SportsService, private cd: ChangeDetectorRef) {
         
     }
 
@@ -103,21 +105,37 @@ export class SportsComponent implements OnInit {
 
     public query() {
         let daysChecked = this.getDays();
-        console.log(daysChecked)
-        let typesChecked = this.getTypes();
-        console.log(typesChecked)        
+        let typesChecked = this.getTypes();     
         this.sportsService.getSportEvents(this.distance, this.location.lat, this.location.long, daysChecked, typesChecked, this.ageMaximal).then((v: ISportEvent[])=>{
+            this.markers = [];
+            this.sportEvents = [];
             v.forEach((element) => {
                 let x = {
-                    age: 42,
+                    name: element.name,
                     days: element.days,
-                    lat: element.location.lng,
+                    lat: element.location.lat,
                     long: element.location.lng,
                     distance: this.calculateDistance(this.location.lat, this.location.long, element.location.lat, element.location.lng).toFixed(1),
                     types: element.sport
                 }
-                this.sportEvents.push(x);
-            })
+                this.sportEvents.push(x as SportViewModel);
+                this.markers.push( {
+                    title: element.name,
+                    lat: element.location.lat,
+                    long: element.location.lng
+                });
+            });
+
+            this.sportEvents.sort((first, second) => {
+                if (first.distance <= second.distance) {
+                    return -1;
+                }
+                if (first.distance > second.distance) {
+                    return 1;
+                }
+            });
+
+            this.cd.markForCheck();
         });
     }
     private calculateDistance(lat1:number, long1:number, lat2:number, long2:number) : number {
