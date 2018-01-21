@@ -20,16 +20,13 @@ export class GmapsComponent implements OnInit, OnChanges {
     
     @Input()
     public markers;
-    public test = "hello";
+
+    private lat = 45.6307;
+    private lng = -72.9563;
 
     public ngOnInit() {
-        console.log(this.markers);
     }
 
     public ngOnChanges(changes: {[propKey: string]: SimpleChange}) {
-        console.log(this.markers);
     }
-
-    lat = 45.6307;
-    lng = -72.9563;
 }
