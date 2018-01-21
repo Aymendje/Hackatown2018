@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import "reflect-metadata";
 import { injectable, } from "inversify";
-import { dayCare,sportEvent,dayCareCamp,IDayCareCampModel,alert } from "../db";
+import { dayCare,sportEvent,dayCareCamp,IDayCareCampModel,alert, registration } from "../db";
 
 import { IUserAuthInfo } from "../IUserAuthInfo";
 import { User } from "../User";
@@ -206,7 +206,39 @@ module Route {
             newAlert.save();
             res.send(201);  
         }
+
+
+        public createRegistration(req: Request, res:Response, next:NextFunction):void {
+            let kidId = req.body.kidId;
+            let eventId = req.body.eventId;
+            let eventType = req.body.eventType;
+
+            let newRegistration = new registration();
+            newRegistration.kidId = kidId;
+            newRegistration.eventId = eventId;
+            newRegistration.eventType = eventType;
+
+            newRegistration.save();
+            res.send(201);
+        }
        
+        public getRegistration(req: Request, res:Response, next:NextFunction):void{
+            let kidId = req.params.kidId;
+            let eventId = req.params.eventId;
+            let eventType = req.params.eventType;
+
+            registration.find({
+                kidId : kidId,
+                eventId : eventId,
+                eventType : eventType
+            }).then(
+                ()=>{
+                    res.send(registration)
+                }).catch((reason)=>{
+                    console.log(reason);
+                    res.send(500);
+                })
+        }
 
         private calculateDistance(lat1:number,long1:number,lat2:number,long2:number) :number {
             let p = 0.017453292519943295;    // Math.PI / 180

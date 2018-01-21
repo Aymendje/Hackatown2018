@@ -18,7 +18,8 @@ export class Routes {
         router.get('/api/dayCareCamps',(req:Request,res:Response,next:NextFunction)=> this.auth.getDayCareCamp(req,res,next))
         router.get('/api/alerts',(req:Request,res:Response,next:NextFunction)=> this.auth.getAlerts(req,res,next))
         router.post('/api/alerts',(req:Request,res:Response,next:NextFunction)=> this.auth.createAlert(req,res,next))
-        
+        router.post('/api/registration',(req:Request,res:Response,next:NextFunction)=> this.auth.createRegistration(req,res,next))
+        router.get('/api/registration',(req:Request,res:Response,next:NextFunction)=> this.auth.getRegistration(req,res,next))
         
         
         return router;
