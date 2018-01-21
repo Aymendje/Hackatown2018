@@ -14,6 +14,9 @@ export class DayCareService {
 
     }
 
+    // public getSubscriptionForChild(childId: string, eventId: string){
+        
+    // }
 
     public subscribeChildToEvent(childId: string, eventId: string): Promise<any>{
         let headers = new Headers({ 'Content-Type': 'application/json' });

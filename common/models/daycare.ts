@@ -1,5 +1,6 @@
 export interface IDayCare {
-	name: string;
+    _id: string;
+    name: string;
 	description: string;
     address: string;
     tel : string;
