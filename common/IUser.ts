@@ -1,29 +1,29 @@
 import { ILocation } from "./ILocation";
 
 export interface IUser{
-    Id: number;
-    Gender: boolean;
-    GivenName: string;
-    SurName: string;
-    StreetAddress: string;
-    ZipCode: string;
-    EmailAddress: string;
-    UserName: string;
+    // id: number;
+    gender: boolean;
+    givenName: string;
+    surName: string;
+    streetAddress: string;
+    zipCode: string;
+    emailAddress: string;
+    userName: string;
     // To be defined where needed
     //Password: string;
-    TelephoneNumber: string;
-    Birthday: string;
-    Age: number;
-    CreditCardType: string;
-    CreditCardNumber: string;
+    telephoneNumber: string;
+    birthday: string;
+    age: number;
+    creditCardType: string;
+    creditCardNumber: string;
     CVV2: number;
-    CreditCardExpirationDate: string;
+    creditCardExpirationDate: string;
     SSN: number;
-    Occupation: string;
-    Company: string;
-    Vehicle: string;
-    BloodType: string;
-    Mass : number;
-    Height: number;
-    Location: ILocation
+    occupation: string;
+    company: string;
+    vehicle: string;
+    bloodType: string;
+    mass : number;
+    height: number;
+    location: ILocation
 }

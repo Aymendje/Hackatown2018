@@ -3,6 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { NbMenuService, NbSidebarService } from '@nebular/theme';
 import { UserService } from '../../../@core/data/users.service';
 import { AnalyticsService } from '../../../@core/utils/analytics.service';
+import { IUser } from '../../../../../../common/IUser';
 
 @Component({
   selector: 'ngx-header',
@@ -14,7 +15,7 @@ export class HeaderComponent implements OnInit {
 
   @Input() position = 'normal';
 
-  user: any;
+  user: IUser;
 
   userMenu = [{ title: 'Profile' }, { title: 'Log out' }];
 
@@ -26,10 +27,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.userService.getUser().subscribe((user) => {
-      console.log('Frim the header')
-      console.log(user)
       this.user = user
-      this.user.name = user.UserName
     })
   }
 
