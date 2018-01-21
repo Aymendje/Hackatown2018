@@ -2,6 +2,7 @@ import * as mongoose from "mongoose";
 import { IDayCare } from './../../common/models/daycare';
 import { ISportEvent } from './../../common/models/sportEvent';
 import { IDayCareCamp } from './../../common/models/daycareCamp';
+import { IChild } from './../../common/models/child';
 import { IAlert } from './../../common/models/alert';
 import { IRegistration } from './../../common/models/eventRegister';
 import { IUser } from "../../common/IUser";
@@ -112,7 +113,23 @@ let serverUserSchema = new mongoose.Schema({
         lat: Number,
         lng : Number
     },
+    children: [Number]
 })
+
+export interface IChildModel extends IChild, mongoose.Document{}
+let childchema = new mongoose.Schema({
+    oid: String,
+    gender: Boolean,
+    givenName: String,
+    surName: String,
+    birthday: String,
+    age: Number,
+    bloodType: String,
+    mass: Number,
+    height: Number,
+    parents: [Number],
+})
+export let child = mongoose.model<IChildModel>("Child", childchema)
 export let user = mongoose.model<IServerUser>("Peoples", serverUserSchema);
 export let dayCare = mongoose.model<IDayCareModel>("DayCare",dayCareSchema);
 export let sportEvent = mongoose.model<ISportEventModel>("SportEvent",sportEventSchema);

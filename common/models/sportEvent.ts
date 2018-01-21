@@ -1,5 +1,5 @@
 export interface ISportEvent {
-    _id: string;
+    oid: string;
     name: string;
 	description: string;
     address: string;

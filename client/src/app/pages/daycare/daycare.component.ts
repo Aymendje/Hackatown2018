@@ -68,7 +68,7 @@ export class DaycareComponent implements OnInit {
             this.markers = [];
             for (let daycare of result) {
                 let x = {
-                    id: daycare._id,
+                    id: daycare.oid,
                     name: daycare.name,
                     price: daycare.price,
                     available: daycare.available,

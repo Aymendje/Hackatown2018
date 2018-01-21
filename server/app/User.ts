@@ -25,7 +25,8 @@ export class User implements IUser{
     mass: number;
     height: number;
     location: ILocation;
-
+    children: number[];
+    
     constructor() {
         // TODO
     }
