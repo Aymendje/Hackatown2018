@@ -87,9 +87,9 @@ module Route {
             let age = req.params.age;
             let types = req.params.types;
             let days = req.params.days;
-            let lat = req.params.lat;
-            let long = req.params.long;
-            let dist = req.params.distance;
+            let lat = req.query['lat'];
+            let long = req.query['long'];
+            let dist = req.query['distance'];
 
             sportEvent.find({
                 // Find events based on age
