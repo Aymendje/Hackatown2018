@@ -50,6 +50,16 @@ export const MENU_ITEMS: NbMenuItem[] = [
         ],
     },
     {
+        title: 'Alertes routieres',
+        icon: 'ion-ios-people',
+        children: [
+            {
+                title: 'Alerter routieres',
+                link: '/alerts',
+            }
+        ],
+    },
+    {
         title: 'Règlages',
         icon: 'ion-gear-b',
         children: [
