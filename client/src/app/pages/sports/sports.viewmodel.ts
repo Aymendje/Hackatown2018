@@ -1,6 +1,6 @@
 export interface SportViewModel{
     age : number;
-    types : string[];
+    types : string;
     days : string[];
     lat : number;
     long : number;

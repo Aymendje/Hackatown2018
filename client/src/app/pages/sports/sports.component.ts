@@ -114,7 +114,7 @@ export class SportsComponent implements OnInit {
                     lat: element.location.lng,
                     long: element.location.lng,
                     distance: this.calculateDistance(this.location.lat, this.location.long, element.location.lat, element.location.lng).toFixed(1),
-                    types: element.tags
+                    types: element.sport
                 }
                 this.sportEvents.push(x);
             })

@@ -13,19 +13,19 @@ export const MENU_ITEMS: NbMenuItem[] = [
         children: [
             {
                 title: 'Rechercher une garderie',
-                link: '/daycare',
+                link: '/pages/daycare',
             },
             {
                 title: 'Mes garderies',
-                link: '/daycare/my',
+                link: '/pages/daycare/my',
             },
             {
                 title: 'Mes factures',
-                link: '/daycare/receipts',
+                link: '/pages/daycare/receipts',
             },
             {
                 title: 'Mes alertes',
-                link: '/daycare/alerts',
+                link: '/pages/daycare/alerts',
             }
         ],
     },
@@ -35,19 +35,19 @@ export const MENU_ITEMS: NbMenuItem[] = [
         children: [
             {
                 title: 'Rechercher une activité',
-                link: '/sports',
+                link: '/pages/sports',
             },
             {
                 title: 'Mes inscriptions',
-                link: '/sports/inscriptions',
+                link: '/pages/sports/inscriptions',
             },
             {
                 title: 'Mes reçus',
-                link: '/sports/receipts',
+                link: '/pages/sports/receipts',
             },
             {
                 title: 'Prochains tournois',
-                link: '/sports/tournaments',
+                link: '/pages/sports/tournaments',
             }
         ],
     },
