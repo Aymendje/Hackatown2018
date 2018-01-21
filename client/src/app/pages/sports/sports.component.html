@@ -1,138 +1,138 @@
 <div class="row">
-        <div class="col-md-12">
-            <nb-card>
-                <nb-card-header>Filtrer les résultats de recherche</nb-card-header>
-                <nb-card-body>
-                    <div class="row">
-                        <div class="col-md-12 input-group">
-                            <input (input)="text = $event.target.value" [value]="text" type="text" placeholder="Basket ball" class="form-control"/>
+    <div class="col-md-12">
+        <nb-card>
+            <nb-card-header>Filtrer les résultats de recherche</nb-card-header>
+            <nb-card-body>
+                <div class="row">
+                    <div class="col-md-12 input-group">
+                        <input (input)="text = $event.target.value" [value]="text" type="text" placeholder="Basket ball" class="form-control"/>
+                    </div>
+                </div>
+                <div class="row sliders">
+                    <div class="col-md-6">
+                        <h5>Distance</h5>
+                    </div>
+                    <div class="col-md-6 range-slider">
+                        <div class="range-slider">
+                            <input class="range-slider__range" type="range" (input)="distance = $event.target.value" [value]="distance" min="0" max="40">
+                            <span class="range-slider__value">{{this.distance}} km</span>
                         </div>
                     </div>
-                    <div class="row sliders">
+                </div>
+                <div class="row daycare-row">
+                    <div class="col-md-6">
+                        <h5>Âge maximal</h5>
+                    </div>
+                    <div class="col-md-6 range-slider">
+                        <div class="range-slider">
+                            <input class="range-slider__range" type="range" (input)="ageMaximal = $event.target.value" [value]="ageMaximal" min="7" max="25">
+                            <span class="range-slider__value">{{this.ageMaximal}} ans</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row daycare-row">
+                    <div class="col-md-6">
+                        <h5>Jours</h5>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <nb-checkbox [(ngModel)]="lundiChecked">Lundi</nb-checkbox>
+                            </div>
+                            <div class="col-md-4">
+                                <nb-checkbox [(ngModel)]="mercrediChecked">Mercredi</nb-checkbox>
+                            </div>
+                            <div class="col-md-4">
+                                <nb-checkbox [(ngModel)]="vendrediChecked">Vendredi</nb-checkbox>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <nb-checkbox [(ngModel)]="mardiChecked">Mardi</nb-checkbox>
+                            </div>
+                            <div class="col-md-4">
+                                <nb-checkbox [(ngModel)]="jeudiChecked">Jeudi</nb-checkbox>
+                            </div>
+                            <div class="col-md-4">
+                                <nb-checkbox [(ngModel)]="finDeSemaineChecked">Fin de semaine</nb-checkbox>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row daycare-row">
                         <div class="col-md-6">
-                            <h5>Distance</h5>
+                            <h5>Sports</h5>
                         </div>
                         <div class="col-md-6 range-slider">
-                            <div class="range-slider">
-                                <input class="range-slider__range" type="range" (input)="distance = $event.target.value" [value]="distance" min="0" max="40">
-                                <span class="range-slider__value">{{this.distance}} km</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row daycare-row">
-                        <div class="col-md-6">
-                            <h5>Âge maximal</h5>
-                        </div>
-                        <div class="col-md-6 range-slider">
-                            <div class="range-slider">
-                                <input class="range-slider__range" type="range" (input)="ageMaximal = $event.target.value" [value]="ageMaximal" min="7" max="25">
-                                <span class="range-slider__value">{{this.ageMaximal}} ans</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row daycare-row">
-                        <div class="col-md-6">
-                            <h5>Jours</h5>
-                        </div>
-                        <div class="col-md-6">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <nb-checkbox [(ngModel)]="lundiChecked">Lundi</nb-checkbox>
+                                    <nb-checkbox [(ngModel)]="badmintonChecked">Badminton</nb-checkbox>
                                 </div>
                                 <div class="col-md-4">
-                                    <nb-checkbox [(ngModel)]="mercrediChecked">Mercredi</nb-checkbox>
+                                    <nb-checkbox [(ngModel)]="hockeyChecked">Hockey</nb-checkbox>
                                 </div>
                                 <div class="col-md-4">
-                                    <nb-checkbox [(ngModel)]="vendrediChecked">Vendredi</nb-checkbox>
+                                    <nb-checkbox [(ngModel)]="natationChecked">Natation</nb-checkbox>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
-                                    <nb-checkbox [(ngModel)]="mardiChecked">Mardi</nb-checkbox>
+                                    <nb-checkbox [(ngModel)]="basketballChecked">Basketball</nb-checkbox>
                                 </div>
                                 <div class="col-md-4">
-                                    <nb-checkbox [(ngModel)]="jeudiChecked">Jeudi</nb-checkbox>
+                                    <nb-checkbox [(ngModel)]="soccerChecked">Soccer</nb-checkbox>
                                 </div>
                                 <div class="col-md-4">
-                                    <nb-checkbox [(ngModel)]="finDeSemaineChecked">Fin de semaine</nb-checkbox>
+                                    <nb-checkbox [(ngModel)]="karateChecked">Karaté</nb-checkbox>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row daycare-row">
-                            <div class="col-md-6">
-                                <h5>Sports</h5>
-                            </div>
-                            <div class="col-md-6 range-slider">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <nb-checkbox [(ngModel)]="badmintonChecked">Badminton</nb-checkbox>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <nb-checkbox [(ngModel)]="hockeyChecked">Hockey</nb-checkbox>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <nb-checkbox [(ngModel)]="natationChecked">Natation</nb-checkbox>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <nb-checkbox [(ngModel)]="basketballChecked">Basketball</nb-checkbox>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <nb-checkbox [(ngModel)]="soccerChecked">Soccer</nb-checkbox>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <nb-checkbox [(ngModel)]="karateChecked">Karaté</nb-checkbox>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <div class="row daycare-row">
-                        <div class="col-md-12">
-                            <div class="button-group float-right" style="margin-right: 20px">
-                                <button class="btn btn-success btn-round btn-demo" (click)="query()"> Appliquer les filtres</button>
-                                <button class="btn btn-danger btn-round btn-demo" (click)="initialize()"> Réinitialiser</button>
-                            </div>
+                <div class="row daycare-row">
+                    <div class="col-md-12">
+                        <div class="button-group float-right" style="margin-right: 20px">
+                            <button class="btn btn-success btn-round btn-demo" (click)="query()"> Appliquer les filtres</button>
+                            <button class="btn btn-danger btn-round btn-demo" (click)="initialize()"> Réinitialiser</button>
                         </div>
                     </div>
-                </nb-card-body>
-            </nb-card>
-        </div>
+                </div>
+            </nb-card-body>
+        </nb-card>
     </div>
-    <div class="row">
-        <div class="col-md-12">
-            <ngx-gmaps [markers]=markers></ngx-gmaps>
-        </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <ngx-gmaps [markers]=markers></ngx-gmaps>
     </div>
-    <div class="row">
-        <div *ngFor="let daycare of daycares" class="col-md-3">
-            <nb-card>
-                <nb-card-header (click)="select(daycare)">
-                    <span class="title">{{daycare.name}}</span>
-                    <span class="float-right">
-                        {{daycare.distance}} km
-                    </span>
-                </nb-card-header>
-                <nb-card-body>
-                    <p>Prix : {{daycare.price}} $</p>
-                    <p>Places disponibles: {{daycare.available}}</p>
-                </nb-card-body>
-                <nb-card-footer>
-                    <div class="row">
-                        <div class="col-md-7 form-group">
-                            <select class="form-control">
-                                <option>Emilio Rivera</option>
-                                <option>Nikolay Radoev</option>
-                                <option>Aymen Djellal</option>
-                            </select>
-                        </div>
-                        <div class="col-md-5">
-                            <button class="btn btn-success btn-round" (click)="query()"> Inscrire</button>
-                        </div>
+</div>
+<div class="row">
+    <div *ngFor="let sportEvent of sportEvents" class="col-md-3">
+        <nb-card>
+            <nb-card-header (click)="select(sportEvent)">
+                <span class="title">{{sportEvent.name}}</span>
+                <span class="float-right">
+                    {{sportEvent.distance}} km
+                </span>
+            </nb-card-header>
+            <nb-card-body>
+                <p>Prix : {{sportEvent.price}} $</p>
+                <p>Places disponibles: {{sportEvent.available}}</p>
+                <p>Adresse: {{sportEvent.address}}</p>
+                <p>Téléphone: {{sportEvent.tel}}</p>
+            </nb-card-body>
+            <nb-card-footer>
+                <div class="row">
+                    <div class="col-md-7 form-group">
+                        <select class="form-control" [(ngModel)]="sportEvent.kid">
+                            <option *ngFor="let kid of kids" [ngValue]="kid">{{kid}}</option>
+                        </select>
                     </div>
-                </nb-card-footer>
-            </nb-card>
-        </div>
+                    <div class="col-md-5">
+                        <button class="btn btn-success btn-round" (click)="registerKid(sportEvent)"> Inscrire</button>
+                    </div>
+                </div>
+            </nb-card-footer>
+        </nb-card>
     </div>
+</div>
     

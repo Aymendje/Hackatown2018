@@ -22,10 +22,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
             {
                 title: 'Mes factures',
                 link: '/pages/daycare/receipts',
-            },
-            {
-                title: 'Mes alertes',
-                link: '/pages/daycare/alerts',
             }
         ],
     },
@@ -44,30 +40,12 @@ export const MENU_ITEMS: NbMenuItem[] = [
             {
                 title: 'Mes reçus',
                 link: '/pages/sports/receipts',
-            },
-            {
-                title: 'Prochains tournois',
-                link: '/pages/sports/tournaments',
-            }
-        ],
-    },
-    {
-        title: 'Services de garde',
-        icon: 'ion-university',
-        children: [
-            {
-                title: 'Rechercher',
-                link: '/auth/login',
-            },
-            {
-                title: 'Mes inscriptions',
-                link: '/auth/register',
             }
         ],
     },
     {
         title: 'Alertes routieres',
-        icon: 'ion-ios-people',
+        icon: 'ion-android-warning',
         children: [
             {
                 title: 'Alerter routieres',

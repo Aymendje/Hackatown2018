@@ -15,7 +15,7 @@ export class AlertComponent implements OnInit {
     
     public distance: number;
     public alerts: AlertViewModel[];
-    
+    public canAddAlert : boolean;
     private location = {
         lat: 45.630692,
         long: -72.956329
@@ -25,7 +25,8 @@ export class AlertComponent implements OnInit {
 
     public mapClick(event:MouseEvent){
         // console.log(event);
-        this.alertService.createAlerts((<any>event).coords.lat,(<any>event).coords.lng);
+        if(this.canAddAlert)
+            this.alertService.createAlerts((<any>event).coords.lat,(<any>event).coords.lng);
     }
 
     constructor(private alertService: AlertService, private cd: ChangeDetectorRef) {
@@ -39,6 +40,10 @@ export class AlertComponent implements OnInit {
     private initialize() {
         this.distance = 50;
         this.query();
+    }
+
+    private toggleAlertCreate(){
+        this.canAddAlert = !this.canAddAlert;
     }
     
     public select(daycare: AlertViewModel) {
