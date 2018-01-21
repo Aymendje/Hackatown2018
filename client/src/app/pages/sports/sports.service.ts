@@ -9,11 +9,8 @@ import { Definitions } from '../../../../../common/definitions';
 @Injectable()
 export class SportsService {
 
-<<<<<<< HEAD
-    private baseUrl = "http:/town.polypleb.com:30000/api/sportEvent";
-=======
+
     private baseUrl = Definitions.ServerHostName+'/api/sportEvent';
->>>>>>> origin/master
 
     constructor(private http: Http) {
 
