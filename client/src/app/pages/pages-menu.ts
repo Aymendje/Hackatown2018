@@ -71,7 +71,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
         children: [
             {
                 title: 'Alerter routieres',
-                link: '/alerts',
+                link: '/pages/alerts',
             }
         ],
     },
