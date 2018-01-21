@@ -78,7 +78,8 @@ export interface IRegistrationModel extends IRegistration, mongoose.Document{}
 let registrationSchema = new mongoose.Schema({
     kidId: String,
     eventId : String,
-    eventType : String
+    eventType : String,
+    cost : Number
 });
 
 export interface IServerUser extends IUser, mongoose.Document{}
