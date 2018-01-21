@@ -1,5 +1,8 @@
 import csv, time, datetime, json, requests, sys, random, time, base64
 GOOGLE_API = base64.b64decode(b'QUl6YVN5Ql9nTU01S1F3ZWFmUWJ6bDByck1KUXdJYnVZTHVSdjg0').decode()
+
+DAYS = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "findesemaine"]
+DAYS = DAYS + DAYS + DAYS
 TOWN = "Saint-Hyacinthe"
 PRICE_MIN = 200
 PRICE_MAX = 2000
@@ -127,7 +130,11 @@ def fakedataSports(item, sport):
 	item["price"] = int(random.randrange(PRICE_MIN, PRICE_MAX) * 100 + 0.5)/100
 	item["private"] = bool(random.getrandbits(1))
 	item["available"] = int(random.randrange(MAX_KIDS))
-	item["sport"] = sport
+	item["sport"] = sport[0]
+	strt = random.randint(0, 5)
+	item["days"] = DAYS[strt : strt + random.randint(0, 5)]
+	if not isinstance(item["days"], list):
+		item["days"] = [item["days"]]
 	return item
 
 def generateJSONSports(words):
@@ -150,7 +157,7 @@ with open('DayCare.json', 'w') as outfile:
     json.dump(generateJSONPlace(item), outfile)
 """
 item = []
-items = ["archery", "badminton", "baseball", "softball", "basketball", "beach volleyball", "boxing", "canoe", "kayak", "climbing", "cycling ", "diving", "equestrian", "fencing", "field hockey", "golf", "gymnastics", "handball", "judo", "karate", "pentathlon", "roller sport", "rowing", "sailing", "shooting", "soccer", "football", "swimming", "surfing", "table tennis", "taekwondo", "tennis", "track and field", "triathlon", "volleyball", "water polo", "weightlifting", "wrestling", "baseball ", "rugby", "squash", "wakeboard", "wushu", "dancing", "bowling", "netball", "Boxing", "Pankration", "Running", "Wrestling"]
+items = ["badminton", "hockey", "natation", "basketball", "soccer", "karate"]
 for it in [[i] for i in items]:
 	item += generateJSONSports(it)
 
@@ -159,6 +166,7 @@ sortedlist = []
 for item in item:
     if item not in sortedlist:
         sortedlist.append(item)
+
 
 with open('Sports.json', 'w') as outfile:
     json.dump(sortedlist, outfile,  indent=4)
