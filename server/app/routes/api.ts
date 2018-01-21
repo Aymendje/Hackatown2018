@@ -1,8 +1,8 @@
 import { Request, Response, NextFunction } from "express";
-import { Message } from "../../../common/communication/message";
+// import { Message } from "../../../common/communication/message";
 import "reflect-metadata";
 import { injectable, } from "inversify";
-
+import { dayCare } from "../db";
 module Route {
     const AcceptedUsers: IUserAuthInfo[] = [
         {
@@ -41,6 +41,62 @@ module Route {
                 res.sendStatus(403);
             }
         }
+
+        public getDayCare(req:Request, res :Response, next:NextFunction): void{
+            
+            let dist = req.params.distance;
+            let price = req.params.price;
+            let children = req.params.children;
+            let center = req.params.center;
+          
+            dayCare.find(
+                {
+                    price :{
+                        $lt : price
+                    },
+                    available :{
+                        $gt : children
+                    }
+                }).
+                then(
+                    (dayCares:any[])=>{
+                        let filteredData = dayCares.filter(
+                            (v,i,a)=> {
+                                return this.calculateDistance(v.location.lat,v.location.lng,center.lat,center.lng) <dist;  
+                            }
+                        )
+                        res.json(filteredData);
+                    }
+                ).catch((reason)=>{
+                    console.log(reason);
+                    res.send(500);
+                })
+        }
+
+        public getSpotEvents(req:Request, res:Response, next:NextFunction) : void{
+            
+        }
+
+        public getDayCareCamp(req:Request,res:Response, next:NextFunction) : void{
+            
+        }
+
+        public getAlerts(req:Request, res:Response, next:NextFunction): void{
+
+        }
+
+        public createAlert(req:Request, res:Response, next:NextFunction) : void{
+
+        }
+       
+
+        private calculateDistance(lat1:number,long1:number,lat2:number,long2:number) :number {
+            let p = 0.017453292519943295;    // Math.PI / 180
+            let c = Math.cos;
+            let a = 0.5 - c((lat1-lat2) * p) / 2 + c(lat2 * p) *c((lat1) * p) * (1 - c(((long1- long2) * p))) / 2;
+            let dis = (12742 * Math.asin(Math.sqrt(a))); // 2 * R; R = 6371 km
+            return dis;
+          }
     }
 }
 
