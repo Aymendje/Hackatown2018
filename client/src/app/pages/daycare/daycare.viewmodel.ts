@@ -5,4 +5,5 @@ export interface DayCareViewModel {
     description: string;
     available: number;
     price: number;
+    location: any;
 }

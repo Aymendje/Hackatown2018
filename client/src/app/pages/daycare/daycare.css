@@ -87,3 +87,11 @@ input::-moz-focus-outer {
 .daycare-row {
     margin-top: 10px;
 }
+
+.title {
+    display: inline-block;
+    width: 80%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

@@ -23,6 +23,8 @@ export class DaycareComponent implements OnInit {
         long: -72.956329
     }
 
+    private markers: Array<any>;
+
     constructor(private daycareService: DayCareService, private cd: ChangeDetectorRef) {
         
     }
@@ -37,19 +39,47 @@ export class DaycareComponent implements OnInit {
         this.prix = 8;
     }
     
+    public select(daycare: DayCareViewModel) {
+        this.markers = [];
+        this.markers.push({
+            title: daycare.name,
+            lat: daycare.location.lat,
+            long: daycare.location.long
+        });
+        this.cd.markForCheck();
+    }
+
     public query() {
         this.daycareService.getDayCares(this.distance, this.prix, this.nombreEnfants, this.location.lat, this.location.long).then((result) => {
             this.daycares = [];
+            this.markers = [];
             for (let daycare of result) {
                 let x = {
                     name: daycare.name,
                     price: daycare.price,
                     available: daycare.available,
                     description: "",
-                    distance: this.calculateDistance(this.location.lat, this.location.long, daycare.location.lat, daycare.location.lng).toFixed(1)
+                    distance: this.calculateDistance(this.location.lat, this.location.long, daycare.location.lat, daycare.location.lng).toFixed(1),
+                    location: {
+                        lat: daycare.location.lat,
+                        long: daycare.location.lng
+                    }
                 }
                 this.daycares.push(x as DayCareViewModel);
+                this.markers.push( {
+                    title: daycare.name,
+                    lat: daycare.location.lat,
+                    long: daycare.location.lng
+                });
             }
+            this.daycares.sort((first, second) => {
+                if (first.distance <= second.distance) {
+                    return -1;
+                }
+                if (first.distance > second.distance) {
+                    return 1;
+                }
+            })
             this.cd.markForCheck();
         });
     }
@@ -61,4 +91,6 @@ export class DaycareComponent implements OnInit {
         let dis = (12742 * Math.asin(Math.sqrt(a))); // 2 * R; R = 6371 km
         return dis;
     }
+
+    private 
 }
