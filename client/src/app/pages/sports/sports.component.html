@@ -25,8 +25,8 @@
                         </div>
                         <div class="col-md-6 range-slider">
                             <div class="range-slider">
-                                <input class="range-slider__range" type="range" (input)="age = $event.target.value" [value]="age" min="7" max="25">
-                                <span class="range-slider__value">{{this.age}} ans</span>
+                                <input class="range-slider__range" type="range" (input)="ageMaximal = $event.target.value" [value]="ageMaximal" min="7" max="25">
+                                <span class="range-slider__value">{{this.ageMaximal}} ans</span>
                             </div>
                         </div>
                     </div>
@@ -37,24 +37,24 @@
                         <div class="col-md-6">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <nb-checkbox>Lundi</nb-checkbox>
+                                    <nb-checkbox [(ngModel)]="lundiChecked">Lundi</nb-checkbox>
                                 </div>
                                 <div class="col-md-4">
-                                    <nb-checkbox>Mercredi</nb-checkbox>
+                                    <nb-checkbox [(ngModel)]="mercrediChecked">Mercredi</nb-checkbox>
                                 </div>
                                 <div class="col-md-4">
-                                    <nb-checkbox>Vendredi</nb-checkbox>
+                                    <nb-checkbox [(ngModel)]="vendrediChecked">Vendredi</nb-checkbox>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
-                                    <nb-checkbox>Mardi</nb-checkbox>
+                                    <nb-checkbox [(ngModel)]="mardiChecked">Mardi</nb-checkbox>
                                 </div>
                                 <div class="col-md-4">
-                                    <nb-checkbox>Jeudi</nb-checkbox>
+                                    <nb-checkbox [(ngModel)]="jeudiChecked">Jeudi</nb-checkbox>
                                 </div>
                                 <div class="col-md-4">
-                                    <nb-checkbox>Fin de semaine</nb-checkbox>
+                                    <nb-checkbox [(ngModel)]="finDeSemaineChecked">Fin de semaine</nb-checkbox>
                                 </div>
                             </div>
                         </div>
@@ -66,24 +66,24 @@
                             <div class="col-md-6 range-slider">
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <nb-checkbox>Badminton</nb-checkbox>
+                                        <nb-checkbox [(ngModel)]="badmintonChecked">Badminton</nb-checkbox>
                                     </div>
                                     <div class="col-md-4">
-                                        <nb-checkbox>Hockey</nb-checkbox>
+                                        <nb-checkbox [(ngModel)]="hockeyChecked">Hockey</nb-checkbox>
                                     </div>
                                     <div class="col-md-4">
-                                        <nb-checkbox>Natation</nb-checkbox>
+                                        <nb-checkbox [(ngModel)]="natationChecked">Natation</nb-checkbox>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <nb-checkbox>Basketball</nb-checkbox>
+                                        <nb-checkbox [(ngModel)]="basketballChecked">Basketball</nb-checkbox>
                                     </div>
                                     <div class="col-md-4">
-                                        <nb-checkbox>Soccer</nb-checkbox>
+                                        <nb-checkbox [(ngModel)]="soccerChecked">Soccer</nb-checkbox>
                                     </div>
                                     <div class="col-md-4">
-                                        <nb-checkbox>Karaté</nb-checkbox>
+                                        <nb-checkbox [(ngModel)]="karateChecked">Karaté</nb-checkbox>
                                     </div>
                                 </div>
                             </div>

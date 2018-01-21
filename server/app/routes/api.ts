@@ -83,14 +83,17 @@ module Route {
             // let age = 15;
             // let types = ["Patin", "Ete","Soccer"];
             // let days = ["Mardi","Jeudi"];
-
-            let age = req.params.age;
-            let types = req.params.types;
-            let days = req.params.days;
+            console.log(req.query)
+            let age = req.query['age'];
+            let types = req.query['types'];
+            types = JSON.parse(types);
+            let days = req.query['days'];
+            days = JSON.parse(days)
             let lat = req.query['lat'];
             let long = req.query['long'];
             let dist = req.query['distance'];
-
+            console.log(days)
+            console.log(types)
             sportEvent.find({
                 // Find events based on age
                 minAge: {
