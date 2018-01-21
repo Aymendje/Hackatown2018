@@ -14,6 +14,7 @@ export class Routes {
         router.post('/api/auth/login', (req: Request, res: Response, next: NextFunction) => this.auth.authLogin(req,res,next))
 
         router.get('/api/daycare', (req: Request, res: Response, next: NextFunction) => this.auth.getDayCare(req,res,next))
+        router.get('/api/sportEvent',(req:Request,res:Response,next:NextFunction)=> this.auth.getSpotEvents(req,res,next))
         
         return router;
     }
