@@ -86,6 +86,10 @@ module Route {
             let age = req.params.age;
             let types = req.params.types;
             let days = req.params.days;
+            let lat = req.params.lat;
+            let long = req.params.long;
+            let dist = req.params.distance;
+
             sportEvent.find({
                 // Find events based on age
                 minAge: {
@@ -98,7 +102,8 @@ module Route {
                         // Check for tags intesection
                         return this.intersect(types,v.tags).length > 0 &&
                         // Check for date intersection 
-                               this.intersect(days,v.days).length > 0;
+                               this.intersect(days,v.days).length > 0 &&
+                               this.calculateDistance(v.location.lat,v.location.lng, lat, long) <dist;
                     });
                     res.json(filteredData);
                 }
@@ -122,6 +127,9 @@ module Route {
         let types = req.params.tags;
         let startDate = req.params.startDate;
         let endDate =req.params.endDate;
+        let lat = req.params.lat;
+        let long = req.params.long;
+        let dist = req.params.distance;
 
             dayCareCamp.find({
                 minAge:{
@@ -140,7 +148,9 @@ module Route {
                         &&
                         validStartDate
                         &&
-                        validEndDate;
+                        validEndDate
+                        &&
+                        this.calculateDistance(v.location.lat,v.location.lng, lat, long) <dist;
                     });
                 res.json(filteredData);     
             }).catch((reason)=>{
@@ -168,9 +178,7 @@ module Route {
                 });
                 res.json(filteredData);     
             });
-            // let dist = req.params.distance;
-            // let lat = req.params.lat;
-            // let long = req.params.long;
+    
         }
 
         public createAlert(req:Request, res:Response, next:NextFunction) : void{
