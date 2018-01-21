@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from "express";
 // import { Message } from "../../../common/communication/message";
 import "reflect-metadata";
 import { injectable, } from "inversify";
-import { dayCare } from "../db";
+import { dayCare,sportEvent } from "../db";
 module Route {
     const AcceptedUsers: IUserAuthInfo[] = [
         {
@@ -75,11 +75,35 @@ module Route {
         }
 
         public getSpotEvents(req:Request, res:Response, next:NextFunction) : void{
-            // let age =req.params.age;
-            // let types = req.params.types;
-            // let days = req.params.days;
+           
+            // Test data
+            // let age = 15;
+            // let types = ["Patin", "Ete","Soccer"];
+            // let days = ["Mardi","Jeudi"];
 
-            // dayCare.find
+            let age = req.params.age;
+            let types = req.params.types;
+            let days = req.params.days;
+            sportEvent.find({
+                // Find events based on age
+                minAge: {
+                    $lt: age
+                },
+            }).then(
+                (sportEvents:any[])=>{
+                    let filteredData = sportEvents.filter((v,i,a) =>
+                    {
+                        // Check for tags intesection
+                        return this.intersect(types,v.tags).length > 0 &&
+                        // Check for date intersection 
+                               this.intersect(days,v.days).length > 0;
+                    });
+                    res.json(filteredData);
+                }
+            ).catch((reason)=>{
+                console.log(reason);
+                res.send(500);
+            })
 
         }
 
@@ -102,6 +126,14 @@ module Route {
             let a = 0.5 - c((lat1-lat2) * p) / 2 + c(lat2 * p) *c((lat1) * p) * (1 - c(((long1- long2) * p))) / 2;
             let dis = (12742 * Math.asin(Math.sqrt(a))); // 2 * R; R = 6371 km
             return dis;
+        }
+
+        private intersect(a:string[], b:string[]):string[] {
+            var t;
+            if (b.length > a.length) t = b, b = a, a = t; // indexOf to loop over shorter
+            return a.filter((e:string)=> {
+                return b.indexOf(e) > -1;
+            });
         }
     }
 }
