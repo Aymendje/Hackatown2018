@@ -8,7 +8,7 @@ import { DayCareViewModel } from './daycare.viewmodel';
 @Injectable()
 export class DayCareService {
 
-    private baseUrl = "http://132.207.203.37:3000/api/daycare";
+    private baseUrl = "http:/town.polypleb.com:3000/api/daycare";
 
     constructor(private http: Http) {
 
@@ -25,7 +25,7 @@ export class DayCareService {
             eventId : eventId,
             eventType: 'daycare'
         }
-        return this.http.post('http://132.207.203.37:3000/api/registration', body)
+        return this.http.post('http:/town.polypleb.com:3000/api/registration', body)
             .toPromise()
             .then((res) => {
                 return res.json()

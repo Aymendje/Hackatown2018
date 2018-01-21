@@ -8,7 +8,7 @@ import { SportViewModel } from './sports.viewmodel';
 @Injectable()
 export class SportsService {
 
-    private baseUrl = "http://132.207.203.37:3000/api/sportEvent";
+    private baseUrl = "http:/town.polypleb.com:30000/api/sportEvent";
 
     constructor(private http: Http) {
 
@@ -52,7 +52,7 @@ export class SportsService {
                 body: body
             }
         );
-        this.http.post(`http://132.207.203.37:3000/api/registration`, body).toPromise().then((res)=>{
+        this.http.post(`http:/town.polypleb.com:3000/api/registration`, body).toPromise().then((res)=>{
             return res.json();
         });
     }
