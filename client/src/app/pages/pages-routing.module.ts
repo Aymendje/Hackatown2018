@@ -2,15 +2,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 import { PagesComponent } from './pages.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [{
     path: '',
     component: PagesComponent,
     children: [
         {
-            path: 'dashboard',
-            component: DashboardComponent,
+            path: 'home',
+            component: HomeComponent,
         },
         {
             path: 'daycare',
@@ -22,7 +22,7 @@ const routes: Routes = [{
         },
         {
             path: '',
-            redirectTo: 'dashboard',
+            redirectTo: 'home',
             pathMatch: 'full',
         },
     ],

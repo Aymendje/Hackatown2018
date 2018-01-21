@@ -4,7 +4,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
     {
         title: 'Ma ville',
         icon: 'nb-home',
-        link: '/pages/dashboard',
+        link: '/home',
         home: true,
     },
     {
@@ -13,11 +13,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
         children: [
             {
                 title: 'Rechercher une garderie',
-                link: '/pages/daycare',
+                link: '/daycare',
             },
             {
                 title: 'Mes garderies',
-                link: '/pages/daycare/my',
+                link: '/daycare/my',
             }
         ],
     },
@@ -27,11 +27,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
         children: [
             {
                 title: 'Rechercher une activité',
-                link: '/pages/sports',
+                link: '/sports',
             },
             {
                 title: 'Mes inscriptions',
-                link: '/pages/sports/my',
+                link: '/sports/my',
             }
         ],
     },
