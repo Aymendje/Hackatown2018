@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import { NbAuthSimpleToken, NbAuthService } from '@nebular/auth';
+import { IUser } from "../../../../../common/IUser";
 import 'rxjs/add/observable/of';
 
 let counter = 0;
@@ -17,21 +19,23 @@ export class UserService {
   };
 
   private userArray: any[];
-
-  constructor() {
-    // this.userArray = Object.values(this.users);
+  private currentUser: IUser;
+  constructor(private authService: NbAuthService) {
+    this.authService.onTokenChange().subscribe((token: NbAuthSimpleToken) => {
+      if (token.getValue()){
+        let obtainedVal = JSON.parse(token.getValue())
+        console.log(obtainedVal)
+        this.currentUser = obtainedVal as IUser;
+        console.log(this.currentUser);
+      }
+    })
   }
 
-  getUsers(): Observable<any> {
-    return Observable.of(this.users);
+  setCurrentUser(u: any){
+    this.currentUser =  u;
   }
 
-  getUserArray(): Observable<any[]> {
-    return Observable.of(this.userArray);
-  }
-
-  getUser(): Observable<any> {
-    counter = (counter + 1) % this.userArray.length;
-    return Observable.of(this.userArray[counter]);
+  getUser(): Observable<IUser> {
+    return Observable.of(this.currentUser);
   }
 }

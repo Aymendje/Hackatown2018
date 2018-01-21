@@ -1,8 +1,9 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 import { IDayCare } from './../../../../../common/models/daycare';
 import { DayCareService } from './daycare.service';
 import { DayCareViewModel } from './daycare.viewmodel';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
     selector: 'ngx-daycare',
@@ -15,15 +16,16 @@ export class DaycareComponent implements OnInit {
     public distance: number;
     public nombreEnfants: number;
     public prix: number;
-    public isPublic: boolean;
+    public daycares: DayCareViewModel[];
     
-    public daycares: Array<DayCareViewModel>;
-    private location: {
-        lat: 45.6307,
-        long: -72.9563
+    private location = {
+        lat: 45.630692,
+        long: -72.956329
     }
 
-    constructor(private daycareService: DayCareService) {
+    private markers: Array<any>;
+
+    constructor(private daycareService: DayCareService, private cd: ChangeDetectorRef) {
         
     }
     
@@ -35,38 +37,51 @@ export class DaycareComponent implements OnInit {
         this.distance = 5;
         this.nombreEnfants = 1;
         this.prix = 8;
-        this.isPublic = true;
-        
-        this.daycares = new Array();
-        this.daycares = [
-            {
-                name: "Garderie du bonheur",
-                distance: 5,
-                price: 12,
-                description: "Situé proche d'une école primaire et facilement accessible via l'autoroute 20, la Garderie du bonheur est la garderie parfaite pour les budgets moyens",
-                available: 20
-            },
-            {
-                name: "Garderie du Soleil",
-                distance: 7.5,
-                price: 9,
-                description: "Situé proche d'une école primaire et facilement accessible via l'autoroute 20, la Garderie du bonheur est la garderie parfaite pour les budgets moyens",
-                available: 6
-            }
-        ];
     }
     
-    public async query() {
-        let result = await this.daycareService.getDayCares(this.distance, this.prix, this.nombreEnfants, this.location.lat, this.location.long);
-        this.daycares = new Array();
-        for (let daycare of result) {
-            this.daycares.push(<DayCareViewModel>{
-                name: daycare.name,
-                description: daycare.description,
-                available: daycare.available,
-                distance: this.calculateDistance(this.location.lat, this.location.long, daycare.location.lat, daycare.location.lng)
-            });
-        }
+    public select(daycare: DayCareViewModel) {
+        this.markers = [];
+        this.markers.push({
+            title: daycare.name,
+            lat: daycare.location.lat,
+            long: daycare.location.long
+        });
+        this.cd.markForCheck();
+    }
+
+    public query() {
+        this.daycareService.getDayCares(this.distance, this.prix, this.nombreEnfants, this.location.lat, this.location.long).then((result) => {
+            this.daycares = [];
+            this.markers = [];
+            for (let daycare of result) {
+                let x = {
+                    name: daycare.name,
+                    price: daycare.price,
+                    available: daycare.available,
+                    description: "",
+                    distance: this.calculateDistance(this.location.lat, this.location.long, daycare.location.lat, daycare.location.lng).toFixed(1),
+                    location: {
+                        lat: daycare.location.lat,
+                        long: daycare.location.lng
+                    }
+                }
+                this.daycares.push(x as DayCareViewModel);
+                this.markers.push( {
+                    title: daycare.name,
+                    lat: daycare.location.lat,
+                    long: daycare.location.lng
+                });
+            }
+            this.daycares.sort((first, second) => {
+                if (first.distance <= second.distance) {
+                    return -1;
+                }
+                if (first.distance > second.distance) {
+                    return 1;
+                }
+            })
+            this.cd.markForCheck();
+        });
     }
     
     private calculateDistance(lat1:number, long1:number, lat2:number, long2:number) : number {
@@ -76,4 +91,6 @@ export class DaycareComponent implements OnInit {
         let dis = (12742 * Math.asin(Math.sqrt(a))); // 2 * R; R = 6371 km
         return dis;
     }
+
+    private 
 }

@@ -50,20 +50,22 @@
 </div>
 <div class="row">
     <div class="col-md-12">
-        <ngx-gmaps></ngx-gmaps>
+        <ngx-gmaps [markers]=markers></ngx-gmaps>
     </div>
 </div>
 <div class="row">
     <div *ngFor="let daycare of daycares" class="col-md-3">
-        <nb-card>
+        <nb-card (click)="select(daycare)">
             <nb-card-header>
-                {{daycare.name}}
-                <div class="float-right">
+                <span class="title">{{daycare.name}}</span>
+                <span class="float-right">
                     {{daycare.distance}} km
-                </div>
+                </span>
             </nb-card-header>
-            <nb-card-body>{{daycare.description}}</nb-card-body>
-            <nb-card-footer>Places disponibles: {{daycare.available}}</nb-card-footer>
+            <nb-card-body>
+                <p>Prix : {{daycare.price}} $</p>
+                <p>Places disponibles: {{daycare.available}}</p>
+            </nb-card-body>
         </nb-card>
     </div>
 </div>
