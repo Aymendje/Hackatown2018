@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import "reflect-metadata";
 import { injectable, } from "inversify";
-import { dayCare,sportEvent,dayCareCamp,IDayCareCampModel,alert } from "../db";
+import { dayCare,sportEvent,dayCareCamp,IDayCareCampModel,alert, registration } from "../db";
 
 import { IUserAuthInfo } from "../IUserAuthInfo";
 import { User } from "../User";
@@ -162,15 +162,15 @@ module Route {
 
         public getAlerts(req:Request, res:Response, next:NextFunction): void{
           
-            // let dist = 20;
-            // let lat = 45.5801883;
-            // let long = -73.1624795;
-            // let types = ["Fire","Yonni"];
+            let dist = 20;
+            let lat = 45.5801883;
+            let long = -73.1624795;
+            let types = ["Fire","Yonni"];
 
-            let dist = req.params.distance;
-            let lat = req.params.lat;
-            let long = req.params.long;
-            let types = req.params.types;
+            // let dist = req.params.distance;
+            // let lat = req.params.lat;
+            // let long = req.params.long;
+            // let types = req.params.types;
             alert.find({ }).then((alerts:any[])=>{
                 let filteredData = alerts.filter((v,i,a)=>{
                     let calculatedDistance = this.calculateDistance(v.location.lat,v.location.lng, lat, long);
@@ -183,9 +183,75 @@ module Route {
         }
 
         public createAlert(req:Request, res:Response, next:NextFunction) : void{
+            
+            // let name = "Fire Alert";
+            // let lat = 45.5801883 + Math.random()/3;
+            // let long =  -73.1624795  + Math.random()/3;
+            // let types = ["Fire"];
+            // let description = "SHITS ON FIRE YO!";
 
+            let name = req.body.name;
+            let types = req.body.types;
+            let description = req.body.description;
+            let lat = req.body.lat;
+            let long = req.body.long;
+
+
+            let newAlert = new alert();
+            newAlert.name = name;
+            newAlert.description = description;
+            newAlert.location.lat = lat;
+            newAlert.location.lng = long;
+            newAlert.tags = types;
+            newAlert.save();
+            res.send(201);  
+        }
+
+
+        public createRegistration(req: Request, res:Response, next:NextFunction):void {
+            let kidId = req.body.kidId;
+            let eventId = req.body.eventId;
+            let eventType = req.body.eventType;
+
+            let newRegistration = new registration();
+            newRegistration.kidId = kidId;
+            newRegistration.eventId = eventId;
+            newRegistration.eventType = eventType;
+
+            newRegistration.save();
+            res.send(201);
         }
        
+        public getRegistration(req: Request, res:Response, next:NextFunction):void{
+            let kidId = req.params.kidId;
+            let eventId = req.params.eventId;
+            let eventType = req.params.eventType;
+
+            registration.find({
+                kidId : kidId,
+                eventId : eventId,
+                eventType : eventType
+            }).then(
+                (registrations:any[])=>{
+                    res.send(registrations)
+                }).catch((reason)=>{
+                    console.log(reason);
+                    res.send(500);
+                })
+        }
+
+        public getAllRegistrations(req:Request, res:Response, next:NextFunction):void{
+            let kidId = req.params.kidId;
+
+            registration.find({
+                kidId:kidId
+            }).then((registrations:any[])=>{
+                res.send(registrations);
+            }).catch((reason)=>{
+                console.log(reason);
+                res.send(500);
+            })
+        }
 
         private calculateDistance(lat1:number,long1:number,lat2:number,long2:number) :number {
             let p = 0.017453292519943295;    // Math.PI / 180
