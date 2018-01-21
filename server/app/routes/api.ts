@@ -1,13 +1,9 @@
 import { Request, Response, NextFunction } from "express";
 import "reflect-metadata";
 import { injectable, } from "inversify";
-<<<<<<< HEAD
-import { dayCare,sportEvent } from "../db";
 import { IUserAuthInfo } from "../IUserAuthInfo";
 import { User } from "../User";
-=======
 import { dayCare,sportEvent,dayCareCamp,IDayCareCampModel } from "../db";
->>>>>>> 294d24c6d4cd1c72ef9d58196bcbe87e200b1a91
 module Route {
     const AcceptedUsers: IUserAuthInfo[] = [
         {
