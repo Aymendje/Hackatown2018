@@ -1,21 +1,5 @@
 import * as mongoose from "mongoose";
-
-interface IDayCare {
-	name: string;
-	description: string;
-    address: string;
-    tel : string;
-    location :{
-        lng : number;
-        lat: number;
-    }
-    price : number;
-    rating : number;
-    photo : string;
-    available: number;
-    private : boolean;
-       
-};
+import { IDayCare } from './../../common/models/daycare';
 
 export interface IDayCareModel extends IDayCare, mongoose.Document{}
 let dayCareSchema = new mongoose.Schema({
