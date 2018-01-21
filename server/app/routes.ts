@@ -20,6 +20,7 @@ export class Routes {
         router.post('/api/alerts',(req:Request,res:Response,next:NextFunction)=> this.auth.createAlert(req,res,next))
         router.post('/api/registration',(req:Request,res:Response,next:NextFunction)=> this.auth.createRegistration(req,res,next))
         router.get('/api/registration',(req:Request,res:Response,next:NextFunction)=> this.auth.getRegistration(req,res,next))
+        router.get('/api/allRegistration',(req:Request,res:Response,next:NextFunction)=> this.auth.getAllRegistrations(req,res,next))
         
         
         return router;

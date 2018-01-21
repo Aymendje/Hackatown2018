@@ -232,12 +232,25 @@ module Route {
                 eventId : eventId,
                 eventType : eventType
             }).then(
-                ()=>{
-                    res.send(registration)
+                (registrations:any[])=>{
+                    res.send(registrations)
                 }).catch((reason)=>{
                     console.log(reason);
                     res.send(500);
                 })
+        }
+
+        public getAllRegistrations(req:Request, res:Response, next:NextFunction):void{
+            let kidId = req.params.kidId;
+
+            registration.find({
+                kidId:kidId
+            }).then((registrations:any[])=>{
+                res.send(registrations);
+            }).catch((reason)=>{
+                console.log(reason);
+                res.send(500);
+            })
         }
 
         private calculateDistance(lat1:number,long1:number,lat2:number,long2:number) :number {
