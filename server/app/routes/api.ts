@@ -162,15 +162,15 @@ module Route {
 
         public getAlerts(req:Request, res:Response, next:NextFunction): void{
           
-            // let dist = 20;
-            // let lat = 45.5801883;
-            // let long = -73.1624795;
-            // let types = ["Fire","Yonni"];
+            let dist = 20;
+            let lat = 45.5801883;
+            let long = -73.1624795;
+            let types = ["Fire","Yonni"];
 
-            let dist = req.params.distance;
-            let lat = req.params.lat;
-            let long = req.params.long;
-            let types = req.params.types;
+            // let dist = req.params.distance;
+            // let lat = req.params.lat;
+            // let long = req.params.long;
+            // let types = req.params.types;
             alert.find({ }).then((alerts:any[])=>{
                 let filteredData = alerts.filter((v,i,a)=>{
                     let calculatedDistance = this.calculateDistance(v.location.lat,v.location.lng, lat, long);
@@ -183,7 +183,28 @@ module Route {
         }
 
         public createAlert(req:Request, res:Response, next:NextFunction) : void{
+            
+            // let name = "Fire Alert";
+            // let lat = 45.5801883 + Math.random()/3;
+            // let long =  -73.1624795  + Math.random()/3;
+            // let types = ["Fire"];
+            // let description = "SHITS ON FIRE YO!";
 
+            let name = req.body.name;
+            let types = req.body.types;
+            let description = req.body.description;
+            let lat = req.body.lat;
+            let long = req.body.long;
+
+
+            let newAlert = new alert();
+            newAlert.name = name;
+            newAlert.description = description;
+            newAlert.location.lat = lat;
+            newAlert.location.lng = long;
+            newAlert.tags = types;
+            newAlert.save();
+            res.send(201);  
         }
        
 

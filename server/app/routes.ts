@@ -17,6 +17,8 @@ export class Routes {
         router.get('/api/sportEvent',(req:Request,res:Response,next:NextFunction)=> this.auth.getSpotEvents(req,res,next))
         router.get('/api/dayCareCamps',(req:Request,res:Response,next:NextFunction)=> this.auth.getDayCareCamp(req,res,next))
         router.get('/api/alerts',(req:Request,res:Response,next:NextFunction)=> this.auth.getAlerts(req,res,next))
+        router.post('/api/alerts',(req:Request,res:Response,next:NextFunction)=> this.auth.createAlert(req,res,next))
+        
         
         
         return router;
