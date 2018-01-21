@@ -1,3 +1,5 @@
+<div class="toggleButton">
+        <button [class.btn-success]="this.canAddAlert" class="btn btn-sm btn-success btn-rectangle btn-demo" (click)="toggleAlertCreate()"> Appliquer les filtres</button>
 <div class="row">
     <div class="col-md-12">
         <ngx-gmaps [markers]=markers (onClick)="mapClick($event)"></ngx-gmaps>
