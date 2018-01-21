@@ -1,9 +1,9 @@
 import { Request, Response, NextFunction } from "express";
 import "reflect-metadata";
 import { injectable, } from "inversify";
+import { dayCare,sportEvent } from "../db";
 import { IUserAuthInfo } from "../IUserAuthInfo";
 import { User } from "../User";
-
 module Route {
     const AcceptedUsers: IUserAuthInfo[] = [
         {
@@ -12,8 +12,6 @@ module Route {
             otherInformation: 'Je suis un chevreuil'
         }
     ]
-
-    
 
     @injectable()
     export class Api {
@@ -43,6 +41,100 @@ module Route {
             } else {
                 res.sendStatus(403);
             }
+        }
+
+        public getDayCare(req:Request, res :Response, next:NextFunction): void{
+            
+            let dist = req.params.distance;
+            let price = req.params.price;
+            let children = req.params.children;
+            let lat = req.params.lat;
+            let long = req.params.long;
+
+            dayCare.find(
+                {
+                    price :{
+                        $lt : price
+                    },
+                    available :{
+                        $gt : children
+                    }
+                }).
+                then(
+                    (dayCares:any[])=>{
+                        let filteredData = dayCares.filter(
+                            (v,i,a)=> {
+                                return this.calculateDistance(v.location.lat,v.location.lng, lat, long) <dist;  
+                            }
+                        )
+                        res.json(filteredData);
+                    }
+                ).catch((reason: any)=>{
+                    console.log(reason);
+                    res.send(500);
+                })
+        }
+
+        public getSpotEvents(req:Request, res:Response, next:NextFunction) : void{
+           
+            // Test data
+            // let age = 15;
+            // let types = ["Patin", "Ete","Soccer"];
+            // let days = ["Mardi","Jeudi"];
+
+            let age = req.params.age;
+            let types = req.params.types;
+            let days = req.params.days;
+            sportEvent.find({
+                // Find events based on age
+                minAge: {
+                    $lt: age
+                },
+            }).then(
+                (sportEvents:any[])=>{
+                    let filteredData = sportEvents.filter((v,i,a) =>
+                    {
+                        // Check for tags intesection
+                        return this.intersect(types,v.tags).length > 0 &&
+                        // Check for date intersection 
+                               this.intersect(days,v.days).length > 0;
+                    });
+                    res.json(filteredData);
+                }
+            ).catch((reason)=>{
+                console.log(reason);
+                res.send(500);
+            })
+
+        }
+
+        public getDayCareCamp(req:Request,res:Response, next:NextFunction) : void{
+            
+        }
+
+        public getAlerts(req:Request, res:Response, next:NextFunction): void{
+
+        }
+
+        public createAlert(req:Request, res:Response, next:NextFunction) : void{
+
+        }
+       
+
+        private calculateDistance(lat1:number,long1:number,lat2:number,long2:number) :number {
+            let p = 0.017453292519943295;    // Math.PI / 180
+            let c = Math.cos;
+            let a = 0.5 - c((lat1-lat2) * p) / 2 + c(lat2 * p) *c((lat1) * p) * (1 - c(((long1- long2) * p))) / 2;
+            let dis = (12742 * Math.asin(Math.sqrt(a))); // 2 * R; R = 6371 km
+            return dis;
+        }
+
+        private intersect(a:string[], b:string[]):string[] {
+            var t;
+            if (b.length > a.length) t = b, b = a, a = t; // indexOf to loop over shorter
+            return a.filter((e:string)=> {
+                return b.indexOf(e) > -1;
+            });
         }
     }
 }

@@ -3,16 +3,15 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { MENU_ITEMS } from './pages-menu';
 
 @Component({
-  selector: 'ngx-pages',
-  template: `
+    selector: 'ngx-pages',
+    template: `
     <ngx-sample-layout>
-      <nb-menu [items]="menu"></nb-menu>
-      <router-outlet></router-outlet>
+        <nb-menu [items]="menu"></nb-menu>
+        <router-outlet></router-outlet>
     </ngx-sample-layout>
-  `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    `,
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PagesComponent {
-
-  menu = MENU_ITEMS;
+    menu = MENU_ITEMS;
 }

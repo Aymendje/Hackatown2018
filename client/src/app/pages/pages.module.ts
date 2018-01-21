@@ -1,23 +1,23 @@
 import { NgModule } from '@angular/core';
 
 import { PagesComponent } from './pages.component';
-import { DashboardModule } from './dashboard/dashboard.module';
+import { HomeModule } from './home/home.module';
 import { PagesRoutingModule } from './pages-routing.module';
 import { ThemeModule } from '../@theme/theme.module';
 
 const PAGES_COMPONENTS = [
-  PagesComponent,
+    PagesComponent
 ];
 
 @NgModule({
-  imports: [
-    PagesRoutingModule,
-    ThemeModule,
-    DashboardModule,
-  ],
-  declarations: [
-    ...PAGES_COMPONENTS,
-  ],
+    imports: [
+        PagesRoutingModule,
+        ThemeModule,
+        HomeModule
+    ],
+    declarations: [
+        ...PAGES_COMPONENTS,
+    ],
 })
 export class PagesModule {
 }
