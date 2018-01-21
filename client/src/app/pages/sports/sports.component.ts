@@ -50,6 +50,7 @@ export class SportsComponent implements OnInit {
         this.ageMaximal = 18;
         this.prix = 8;
         this.nombreEnfants = 1;
+        this.sportEvents = [];
         // Days
         this.lundiChecked = false;
         this.mardiChecked = false;
@@ -106,7 +107,6 @@ export class SportsComponent implements OnInit {
         let typesChecked = this.getTypes();
         console.log(typesChecked)        
         this.sportsService.getSportEvents(this.distance, this.location.lat, this.location.long, daysChecked, typesChecked, this.ageMaximal).then((v: ISportEvent[])=>{
-            console.log(`Something`)
             v.forEach((element) => {
                 let x = {
                     age: 42,

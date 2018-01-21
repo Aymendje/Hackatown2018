@@ -37,7 +37,7 @@ let sportEventSchema = new mongoose.Schema({
     available: Number,
     minAge : Number,
     days : [String],
-    tags : [String]
+    sport : String
 });
 
 
