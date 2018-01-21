@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from "express";
 // import { Message } from "../../../common/communication/message";
 import "reflect-metadata";
 import { injectable, } from "inversify";
-import { dayCare,sportEvent,dayCareCamp,IDayCareCampModel } from "../db";
+import { dayCare,sportEvent,dayCareCamp,IDayCareCampModel,alert } from "../db";
 module Route {
     const AcceptedUsers: IUserAuthInfo[] = [
         {
@@ -148,7 +148,27 @@ module Route {
         }
 
         public getAlerts(req:Request, res:Response, next:NextFunction): void{
+          
+            // let dist = 20;
+            // let lat = 45.5801883;
+            // let long = -73.1624795;
+            // let types = ["Fire","Yonni"];
 
+            let dist = req.params.distance;
+            let lat = req.params.lat;
+            let long = req.params.long;
+            let types = req.params.types;
+            alert.find({ }).then((alerts:any[])=>{
+                let filteredData = alerts.filter((v,i,a)=>{
+                    let calculatedDistance = this.calculateDistance(v.location.lat,v.location.lng, lat, long);
+                    let hasTypeIntersect = this.intersect(types,v.tags).length > 0;
+                    return calculatedDistance < dist && hasTypeIntersect;
+                });
+                res.json(filteredData);     
+            });
+            // let dist = req.params.distance;
+            // let lat = req.params.lat;
+            // let long = req.params.long;
         }
 
         public createAlert(req:Request, res:Response, next:NextFunction) : void{

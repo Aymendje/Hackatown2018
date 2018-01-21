@@ -2,6 +2,8 @@ import * as mongoose from "mongoose";
 import { IDayCare } from './../../common/models/daycare';
 import { ISportEvent } from './../../common/models/sportEvent';
 import { IDayCareCamp } from './../../common/models/daycareCamp';
+import { IAlert } from './../../common/models/alert';
+
 
 
 export interface IDayCareModel extends IDayCare, mongoose.Document{}
@@ -58,9 +60,24 @@ let dayCareCampSchema = new mongoose.Schema({
     tags : [String],
 });
 
+
+export interface IAlertModel extends IAlert, mongoose.Document{}
+let alertSchema = new mongoose.Schema({
+    name: String,
+	description: String,
+    location :{
+        lng : Number,
+        lat: Number
+    },
+    photo : String,
+    tags : [String]
+});
+
+
 export let dayCare = mongoose.model<IDayCareModel>("DayCare",dayCareSchema);
 export let sportEvent = mongoose.model<ISportEventModel>("SportEvent",sportEventSchema);
 export let dayCareCamp = mongoose.model<IDayCareCampModel>("DayCareCamp",dayCareCampSchema);
+export let alert = mongoose.model<IAlertModel>("Alert", alertSchema);
 
 (<any>mongoose.Promise) = global.Promise;
 mongoose.connect("mongodb://Harambe:harambe@ds253587.mlab.com:53587/hackatown2018").catch((err) => {console.log(err)})
